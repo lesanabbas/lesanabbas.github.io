@@ -1,35 +1,629 @@
+<!--
+    Created by Programmer
+    Full source code on my github -
+    https://github.com/codeninja02/Paint-Playground
+-->
+
 <!DOCTYPE html>
-<html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('/w3images/forestbridge.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
-<body>
+<html lang="en">
+<head>
+    <script>
+        alert("\nUpvote and Follow me if you loved my code ^_^\n\nYou can also post your canvas in the public gallery!\n\nInstagram - https://www.instagram.com/codeninja02\n\nAIMU ✌️\n")
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.22.1/firebase.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css2?family=Rubik&display=swap);html{padding:0;margin:0}*{padding:0;margin:0;-webkit-tap-highlight-color:transparent;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body{background-color:#23252d;overflow:hidden;padding:0;margin:0!important;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}::-webkit-scrollbar{width:0;background:0 0}::-webkit-input-placeholder{color:#535a6a}:-ms-input-placeholder{color:#535a6a}::placeholder{color:#535a6a}@font-face{font-family:HelveticaNormal;src:url(https://res.cloudinary.com/dp1xkuswt/raw/upload/v1597987314/Helvetica_uld9sz.ttf)}a{text-decoration:none}a:hover{text-decoration:none}input:focus,select:focus,textarea:focus{outline:0}.flex{display:flex}.hidden{display:none!important}.invisible{opacity:0!important}img{object-fit:cover}.nav-c-2{display:flex;font-family:HelveticaNormal;font-weight:800;font-size:12px;height:22px;width:28px;overflow:hidden;align-items:center;justify-content:flex-end;padding-right:4px;border-radius:8px;margin-left:8px;margin-top:2px}.s-m-i-1{height:2px;width:18px;border-radius:20px;background:#a1a4aa;margin-bottom:3px}.s-m-i-2{height:1.1px;width:22px;border-radius:20px;background:#a1a4aa;margin-bottom:3px}.s-m-i-3{height:2px;width:18px;border-radius:20px;background:#a1a4aa}.grid-icon-1{color:#d8dae1;font-size:20px;line-height:40px;margin-left:10px;padding-top:4px}.section-1-super-container{margin-top:4px}.section-1{background:#1a1d25;border-radius:10px;padding:2px;width:calc(100% - 20px);margin:auto;margin-top:10px}.nav-c-1{padding-top:4px}.nav-c--2{margin-left:10px;font-family:HelveticaNormal;color:#eaebeb;line-height:36px;font-size:16px;width:100%}.name-c-1{flex-grow:1;padding-right:40px}.name-c-2{height:30px;width:30px;background:#1a1d25;text-align:center;line-height:30px;margin-right:4px;font-size:15px;border-radius:10px;padding-top:2px;padding-left:2px;margin-top:3px;color:#fff;transition:.1s}.name-c-2:active{transform:scale(1.1)}.nameField{background:0 0;outline:0;border:0 solid;color:#949cac;line-height:36px;font-size:14px;width:100%;text-decoration:none}.nameField:focus{text-decoration:none}.canvas-container-1{height:340px;background-color:#1a1d25;margin:auto;margin-top:10px;width:calc(100% - 20px);border-radius:10px;display:flex;align-items:center;justify-content:center}.canvas-main-container{height:300px;width:calc(100% - 40px);background-color:#171920;margin:auto;border-radius:10px;overflow:hidden}.brush-exper-1{color:#2a303d;position:absolute;right:-50px;top:calc(280px);font-size:200px;opacity:.4}.bottom-tools{position:fixed;bottom:10px;width:calc((100% - 20px) - 70px);margin-left:10px;background:#1a1d25;border-radius:10px;padding:4px;font-family:HelveticaNormal}.bc-1{display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:8px;margin-bottom:6px;color:#a8a7ad}.color-container{height:26px;width:26px;border-radius:20px;border:2px solid #6b738a}.b-t-c-1{flex:1}.cc1{background:#cacdd7}.cc2{background:#171920}.pencil-1-container{height:26px;width:26px;border-radius:100px;display:flex;align-items:center;justify-content:center;background:#6b738a;color:#1a1d25;font-size:15px;border:2px solid #6b738a}.btc1-1{display:flex;align-items:center;justify-content:flex-end;flex:1}.upload-c-1-1{height:50px;background:#037fe2;margin-right:4px;width:50px;border-radius:100px;display:flex;justify-content:center;align-items:center;font-size:20px;color:#fff;position:fixed;bottom:20px;right:10px}.edit-tools{height:57px;min-height:57px;max-height:57px;position:fixed;bottom:90px;width:calc((100% - 80px));margin-left:70px;background:#1a1d25;border-radius:10px;padding:10px}.color-c{background:#cacdd7;height:26px;width:26px;border-radius:20px}.choose-color-c-1{overflow:auto;white-space:nowrap;padding-top:6px;margin-left:8px;margin-right:8px}.choose-color-c-1 .color-c{background:#b0bec5;color:#fff;display:inline-block;font-size:80px;font-weight:700;height:26px;width:26px;line-height:200px;text-align:center;margin-right:8px}.choose-color-c-1 .color-c:first-child{background:url(https://i.pinimg.com/originals/55/7e/3d/557e3ddb17b5ebe5975a9d31f52d960a.png);background-size:contain;color:#fff;display:inline-block;font-size:80px;font-weight:700;height:26px;width:26px;line-height:200px;text-align:center;margin-right:8px}.go-back-btn-1{position:fixed;bottom:92px;height:50px;width:50px;margin-left:10px;background:#6b738a;border-radius:10px;padding:10px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff}.gbb-1{position:fixed!important;bottom:92px;height:50px;width:50px;background:#6b738a;border-radius:10px;padding:10px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff}.color-c:nth-child(2){background:#171920;border:2px solid #6b738a}.color-c:nth-child(3){background:#b0bec5}.color-c:nth-child(4){background:#f44336}.color-c:nth-child(5){background:#9c27b0}.color-c:nth-child(6){background:#673ab7}.color-c:nth-child(7){background:#3f51b5}.color-c:nth-child(8){background:#2196f3}.color-c:nth-child(9){background:#009688}.color-c:nth-child(10){background:#4caf50}.color-c:nth-child(11){background:#ffeb3b}.color-c:nth-child(12){background:#ff9800}.color-c:nth-child(13){background:#ff9850}.color-c:nth-child(14){background:#fff}.wrapper{display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}custom-slider{transform:scale(1.5)}custom-slider+custom-slider{margin-top:5rem}.set-thickness-c-1{display:flex;align-items:center;justify-content:center;margin-top:10px}.tr-1{transition:.2s ease-in-out}.edit-tools-2{height:60px;min-height:60px;max-height:60px;position:fixed;bottom:90px;width:calc(100% - 20px);margin-left:10px;background:#1a1d25;border-radius:10px;padding:10px}.edit-tools-3{transition:.2s ease-in-out;background:rgb(26 29 37);position:absolute;bottom:0;width:100%;margin-left:0;border-radius:0;height:100vh;z-index:100;min-height:100vh;max-height:100vh}.et____bg-b-2{background:rgb(26 29 37 / .4)}.e-t--f-c-1{flex:1}.e-t--f-c-1-1{display:flex;align-items:center;justify-content:center;color:#cacdd7;font-size:20px}.e-t--f-c-1-2{font-family:HelveticaNormal;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:8px;margin-bottom:6px;color:#a8a7ad}#sendBtn2{transition:.1s ease-in-out}#sendBtn2:active{font-size:24px!important}.goBackToBasic2{margin-left:10px;margin-top:10px;color:#a1a4aa;font-size:30px}.about-heading-1-1{font-size:32px;font-family:Roboto,sans-serif;margin-left:10px;color:#d6d6d7;margin-top:10px}.about-heading-1-2{margin-top:20px;font-size:20px;font-family:Roboto,sans-serif;margin-left:10px;color:#d6d6d7}.about-p-1{margin-left:10px;margin-right:10px;margin-top:10px;font-family:Rubik,sans-serif;font-size:14px;color:#a0a2a6}.about-p-2{margin-left:10px;margin-right:10px;margin-top:10px;font-family:Rubik,sans-serif;font-size:14px;color:#a0a2a6}.aboutSocialLinks-1{margin-top:10px;margin-left:10px;font-size:14px;font-family:HelveticaNormal;color:#a0a2a6;list-style:none}.aboutSocialLinks-1 a{font-family:HelveticaNormal;color:#a0a2a6}.aboutSocialLinks-1-1{margin-bottom:4px}.copy-signature-1{font-family:Rubik,sans-serif;color:#d6d6d7;margin-left:10px;position:absolute;bottom:10px}.aboutThanks-2{margin-top:6px}.github-p{background:#a0a2a6;color:#1a1d25;padding:2px;border-radius:100px;font-size:12px;padding-left:8px;padding-right:8px}.comp-1{background:#a0a2a6;color:#1a1d25;padding:2px;border-radius:100px;font-size:12px;padding-left:8px;padding-right:8px}.aboutThanks-1-1{list-style:none;margin-bottom:8px}.floating-select-color-btn{position:fixed;bottom:120px;color:#1a1d25;left:76px}.pickr{max-height:2px;max-width:2px;overflow:hidden!important;color:#1a1d25;background-color:#1a1d25!important}.pcr-button{color:rgb(26 29 37)!important}.pickr .pcr-button:before{background:#1a1d25!important}.pickr .pcr-button{background:#1a1d25!important}.pcr-app[data-theme=nano]{width:14.15em!important;max-width:95vw;overflow:hidden;border-radius:8px}.pcr-app .pcr-interaction input:focus{box-shadow:0 0 0 0 hsla(0,0%,100%,.85),0 0 0 0 rgba(66,133,244,.75)!important}.pcr-app .pcr-interaction .pcr-type.active{color:#fff;background:#4285f4;border-radius:20px!important;padding-left:14px!important;padding-right:14px!important}.pcr-app button.pcr-active,.pcr-app button:focus,.pcr-app input.pcr-active,.pcr-app input:focus,.pickr button.pcr-active,.pickr button:focus,.pickr input.pcr-active,.pickr input:focus{box-shadow:0 0 0 0 hsla(0,0%,100%,.85),0 0 0 0 currentColor!important}.pcr-app[data-theme=nano] .pcr-selection .pcr-color-chooser,.pcr-app[data-theme=nano] .pcr-selection .pcr-color-opacity{margin-top:12px!important}.an-20{transition:.2s}.superbody-2{position:fixed;top:0;left:100%;height:100vh;width:100%;background:#1a1d25}.superbody-2-B{position:fixed;top:0;left:0;height:100vh;width:100%;background:#1a1d25}.go-back-4{margin-left:10px;margin-top:10px;color:#f9f9f9;font-size:30px}.prev-cont-2{height:340px;border:2px solid #171920;margin:auto;margin-top:10px;width:calc(100% - 20px);border-radius:10px;display:flex;align-items:center;justify-content:center}.canvas-cont-2{height:300px;width:calc(100% - 40px);background-color:#171920;margin:auto;border-radius:10px;overflow:hidden}.user-drawing-canvas-2{height:100%;width:100%}.prev-input-cont-20{margin-top:20px}.prev-input-20{display:flex;margin:auto;justify-content:center}.prev-i-i-A{border-radius:10px;overflow:hidden;background:#2b344c;color:#d5d9e5;padding:8px;font-family:HelveticaNormal;text-align:center;padding-left:40px;padding-right:40px;width:50%;max-width:300px;max-height:36px}.prev-i-i-B{border-radius:10px;overflow:hidden;background:#2b344c;color:#d5d9e5;padding:8px;font-family:HelveticaNormal;text-align:center;height:36px;width:36px;min-width:36px;min-height:36px;margin-left:10px}.prev-btn-20{margin:auto;margin-top:10px;border-radius:10px;overflow:hidden;background:#037fe2;color:#fff;padding:8px;font-family:HelveticaNormal;text-align:center;padding-left:40px;padding-right:40px;width:calc(50% + 46px);max-width:300px;max-height:36px}.p-u--cccc-24{display:flex;align-items:center;justify-content:center}.upload-cont-p-24{color:#747a8a;position:absolute;font-family:Rubik,sans-serif;font-size:12px;width:80%;text-align:center;bottom:10px}.alert-uploading{position:fixed;top:0;left:0;height:100vh;width:100%;background:rgb(0 0 0 / .5);display:flex;flex-direction:column;align-items:center;justify-content:center}.alert-box{transition:.2s;height:250px;width:80%;max-width:400px;background:#fff;border-radius:10px;box-shadow:0 6px 8px rgb(0 0 0 / 16%)}.alert--icon{transition:.2s;font-size:25px;color:#3d4252;background:#fff;border-radius:100px;overflow:hidden;padding:6px;box-shadow:0 6px 8px rgb(0 0 0 / 16%)}.alert-cross-btn{border-radius:100px;overflow:hidden;margin-top:40px}.alert-icon{margin:auto;margin-top:40px;display:flex;font-size:60px;border:3px solid #008eff;color:#008eff;border-radius:100px;padding:10px;height:120px;width:120px;align-items:center;justify-content:center}.alert-title{margin:auto;width:200px;color:#3d4252;font-family:HelveticaNormal;text-align:center;margin-top:24px;font-size:16px;display:flex;align-items:center;justify-content:center}.alert-title-B{margin-left:4px}@keyframes blink{0%{opacity:.2}20%{opacity:1}100%{opacity:.2}}.saving span{font-weight:700;animation-name:blink;animation-duration:1.4s;animation-iteration-count:infinite;animation-fill-mode:both}.saving span:nth-child(2){animation-delay:.2s}.saving span:nth-child(3){animation-delay:.4s}.alert-circle{height:120px;width:120px;position:absolute;border-radius:200px;background:rgb(255 255 255 / 60%);margin-left:20%}#alertCrossBtnCC{transition:.2s}#sideMenuMain{transition:.2s}.sidemenu-container{overflow:hidden;position:fixed;max-width:240px;top:60px;left:10px;background:rgb(255 255 255);box-shadow:6px 6px 8px rgb(21 23 29 / 84%);border-radius:10px;padding-top:20px;padding-bottom:10px}.side-cont-BB{display:flex;font-family:Rubik,sans-serif;font-size:14px;margin-bottom:10px;color:#616471;border-bottom:1px solid #e6e7ee;padding-bottom:6px}.side-cont-BB--B{display:flex;font-family:Rubik,sans-serif;font-size:14px;margin-bottom:10px;color:#616471;padding-bottom:6px}.side-cont-BB-A{margin-left:6px;margin-right:6px}.goBackToBasic4{transition:.1s;display:flex;margin-left:10px;padding-top:10px;color:#a1a4aa;font-size:30px;padding-bottom:4px}.refreshGalleryBtn4{font-size:22px}.gallery-content-1{margin-right:calc(100% - 150px);color:#f5f5f5}.gallery-content-2{font-family:HelveticaNormal;height:32px;font-size:14px;background:#037fe2;color:#fff;border-radius:100pc;padding:6px;display:flex;align-items:center;justify-content:center;padding-left:16px;padding-right:16px}#refreshGalleryBtn8{margin-left:6px}.user-c-DD{height:calc(100vh - 45px);overflow-y:scroll}.canvas-gallery-para{margin-right:10px;margin-left:10px;font-family:Rubik,sans-serif;font-size:12px;text-align:center;margin-top:20px;margin-bottom:20px;color:#464c5c;padding-top:20px}.users-canvas-container-HH{margin-top:20px;border-bottom:2px solid #15171d;padding-bottom:20px}.user-canvas-HH{height:340px;width:calc(100% - 20px);background-color:#222630;border:3px solid #171920;margin:auto;border-radius:10px;display:flex;align-items:center;justify-content:center}.user-canvas-container-MAIN{height:300px;width:calc(100% - 40px);background-color:#171920;margin:auto;border-radius:10px;overflow:hidden}.user-canvas-info-BOX{display:flex;margin-left:10px;margin-right:10px;font-family:Rubik,sans-serif;margin-top:10px}.user-profile-HH{color:#fff;text-transform:uppercase;height:40px;width:40px;display:flex;align-items:center;justify-content:center;background:#15171d;border-radius:100px;margin-left:10px}.user-canvas-name-HH{display:flex;align-items:center;justify-content:center;flex-direction:column;margin-left:10px;font-size:16px;color:#f0f8ff;font-family:HelveticaNormal;flex:1}.user-canvas-btn-HH{flex:2;display:flex;align-items:center;justify-content:center}.user-canvas-BTN-HH-BTN{width:160px;text-align:center;overflow:hidden;font-size:16px;height:28px;display:flex;align-items:center;justify-content:center;background:#037fe2;color:#fff;border-radius:10px}.user-canvas-time-HH{font-family:Rubik,sans-serif;font-size:10px;color:#70788c}.pickr{opacity:0!important}#userLoadingContainer8{display:flex;align-items:center;justify-content:center}.loading-box{overflow:hidden;margin-top:20px;text-align:center;font-size:34px;color:#037fe2;height:32px;width:32px;border-radius:100px;background:#fff;display:flex;align-items:center;justify-content:center}.rotate-this-forever{animation-name:foreverRotate;animation-duration:1s;animation-timing-function:linear;animation-iteration-count:infinite}@keyframes foreverRotate{0%{transform:rotate(0)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}.splash-screen-1{position:fixed;height:100vh;width:100%;left:0;top:0;background:rgb(24 26 34);display:flex;align-items:center;justify-content:center;transition:.4s}.spash-box{width:80px;height:80px;display:flex;justify-content:center;align-items:center;background:rgb(3 127 226);border:6px solid #fff;border-radius:1000px;font-size:28px;color:#fff;transition:.4s;filter:blur(00px)}
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
+    <title>Paint Playground</title>
+</head>
+<body class="body">
+    
+    <div class="hidden">
+        <!-- <div id="canvascontainer"></div> -->
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    Logo
-  </div>
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">35 days left</p>
-  </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-  </div>
-</div>
+        <p>
+            <button id="saveButton">save</button>
+            <button id="clearButton">clear</button>
+        </p>
 
+        <ol id="drawinglist"></ol>
+    </div>
+
+    <div class="superbody-1 an-20">
+        <!-- Section 1 -->
+
+    <div class="section-1-super-container">
+
+        <div class="section-1 fex__1">
+            <div class="flex">
+
+                <div class="nav-c-1">
+
+                    <!-- <div class="flip-horizontal nav-c-2">
+                        <div class="side-menu-icon">
+                            <div class="s-m-i-1"></div>
+                            <div class="s-m-i-2"></div>
+                            <div class="s-m-i-3"></div>
+                        </div>
+                    </div> -->
+                    <ion-icon id="openSideMenuIcon" class="grid-icon-1" name="menu"></ion-icon>
+
+                </div>
+
+                <div class="flex nav-c--2">
+                    <div class="name-c-1">
+                        <input id="nameInput1" class="nameField" type="text" value="Anonymous" placeholder="Enter Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="20" disabled>
+                    </div>
+                    <div id="editNameBtn1" class="name-c-2 ripple">
+                        <ion-icon name="create-outline" class="nav-icon-2"></ion-icon>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="canvas-container-1 fex__1">
+            <div class="canvas-main-container">
+                <div id="canvascontainer"></div>
+            </div>
+            <!-- <div class="brush-exper-1">
+                <ion-icon class="brush-exper-1-icon" name="brush"></ion-icon>
+            </div> -->
+        </div>
+
+        <div id="goBackTOMENUopts2" class="go-back-btn-1">
+            <div class="ripple gbb-1">
+                <ion-icon name="arrow-back"></ion-icon>
+            </div>
+        </div>
+
+        <div id="impCont1" class="tr-1 edit-tools-2">
+
+            <div id="setThickness" class="set-thickness-c-1">
+
+                <div class="wrapper">
+                    <custom-slider min="1" 
+                                   max="60" 
+                                   value="4"
+                                   step="1">
+                    </custom-slider>
+                </div>
+                
+            </div>
+
+            <div class="floating-select-color-btn">
+                    <div class="pickrContainer-2">.</div>
+            </div>
+
+            <ul id="chooseColor" class="choose-color-c-1">
+                <div class="color-c ripple"><div id="chooseColorBB2"></div></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                <div class="color-c ripple"></div>
+                
+            </ul>
+
+            <div class="e-t-close-1">
+                <div id="bottomOptionsCont" class="flex e-t--f-c-container">
+
+                    <div class="e-t--f-c-1 home2BtnsAll" id="codeGalleryOpenBtn">
+                        <div class="e-t--f-c-1-1">
+                            <ion-icon class="etfc-icon" name="color-palette"></ion-icon>
+                        </div>
+                        <div class="e-t--f-c-1-2">
+                            Public Gallery
+                        </div>
+                    </div>
+
+                    <div class="e-t--f-c-1 home2BtnsAll" id="openGithubBtn">
+                        <a href="https://github.com/codeninja02/Paint-Playground" target="_blank">
+                            <div class="e-t--f-c-1-1">
+                                <ion-icon class="etfc-icon" name="logo-github"></ion-icon>
+                            </div>
+                            <div class="e-t--f-c-1-2">
+                                Get Code
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="e-t--f-c-1 home2BtnsAll" id="clearCanvasBtn">
+                        <div class="e-t--f-c-1-1">
+                            <ion-icon class="etfc-icon" name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="e-t--f-c-1-2">
+                            Clear Canvas
+                        </div>
+                    </div>
+
+                    <div class="e-t--f-c-1 home2BtnsAll" id="aboutBtn">
+                        <div class="e-t--f-c-1-1">
+                            <ion-icon class="etfc-icon" name="information-outline"></ion-icon>
+                        </div>
+                        <div class="e-t--f-c-1-2">
+                            About
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="aboutScreen">
+                    <div class="goBackToBasic2">
+                        <ion-icon class="goBackBtnICON2" name="arrow-back-outline"></ion-icon>
+                    </div>
+
+                    <div class="about-heading-1-1">
+                        About
+                    </div>
+
+                    <div class="about-p-1">
+                        <p>
+                            Paint Playground is a simple app where can can create your drawings on the canvas and share it in the public gallery. You can also view creations of others as well as edit them. It also gives some more amazing features like changing brush color and thickness and the background of the canvas.
+                        </p>
+                    </div>
+
+                    <div class="about-p-2">
+                        Technologies used in this app are p5.js for canvas management, Firebase for database to store users creations, jQuery and basic web technologies - HTML, CSS and JavaScript.
+                    </div>
+
+                    <div class="about-heading-1-2">
+                        Credits and Mentions
+                    </div>
+
+                    <div class="about-p-2">
+                        A very thanks to -
+                        <ul class="aboutThanks-2">
+
+                            <li class="aboutThanks-1-1">
+                                <a href="https://github.com/itsBadBit" target="_blank"><span class="github-p">Bad_Bit</span></a> for the <a href="#"><span class="comp-1">Custom Range Slider</span></a>
+                            </li>
+                            <li class="aboutThanks-1-1">
+                                <a href="https://github.com/SirBaaron" target="_blank"><span class="github-p">SirBaaron</span></a> for the <a href="https://github.com/SirBaaron/ripple-js" target="_blank"><span class="comp-1">ripple.js</span></a> library
+                            </li>
+                            <li class="aboutThanks-1-1">
+                                <a href="https://github.com/Simonwep" target="_blank"><span class="github-p">Simonwep</span></a> for the <a href="https://github.com/Simonwep/pickr" target="_blank"><span class="comp-1">pickr</span></a> library
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="about-heading-1-2">
+                        Social Links
+                    </div>
+
+                    <ul class="aboutSocialLinks-1">
+                        <a href="https://github.com/codeninja02" target="_blank"><li class="aboutSocialLinks-1-1"><ion-icon name="logo-github"></ion-icon> Github</li></a>
+                        <a href="https://www.instagram.com/codeninja02/" target="_blank"><li class="aboutSocialLinks-1-1"><ion-icon name="logo-instagram"></ion-icon> Instagram</li></a>
+                    </ul>
+
+                    <div class="copy-signature-1">
+                        &copy; Programmer 2020
+                    </div>
+
+                </div>
+
+                <div id="galleryScreen">
+                    <div class="goBackToBasic4">
+                        <div class="gallery-content-1">
+                            <ion-icon id="goFromGalleryToBasic4" class="goBackBtnICON2" name="arrow-back-outline"></ion-icon>
+                        </div>
+                        <div id="thisIsRefreshBTNmain" class="gallery-content-2 ripple">
+                            Refresh
+                            <ion-icon id="refreshGalleryBtn8" class="refreshGalleryBtn4" name="refresh-circle"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div id="userLoadingContainer8">
+                        <div class="loading-box">
+                            <ion-icon class="rotate-this-forever" name="refresh-circle"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div id="scrollCheckDDDD" class="user-c-DD">
+
+                        <div class="users-canvas-container-HH">
+                            <div class="user-canvas-HH">
+                                <div class="user-canvas-container-MAIN" id="userCanvas1">
+                                    
+                                </div>
+                            </div>
+                            <div class="user-canvas-info-BOX">
+                                <div class="user-profile-HH">
+                                    A
+                                </div>
+                                <div class="user-canvas-name-HH">
+                                    <div class="user-canvas-time-HH-B">
+                                        Anonymous
+                                    </div>
+                                    <div class="user-canvas-time-HH">
+                                        16 Nov 2020
+                                    </div>
+                                </div>
+                                <div class="user-canvas-btn-HH">
+                                    <div class="user-canvas-BTN-HH-BTN ripple">
+                                        Fork this canvas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="users-canvas-container-HH">
+                            <div class="user-canvas-HH">
+                                <div class="user-canvas-container-MAIN" id="userCanvas2">
+                                    
+                                </div>
+                            </div>
+                            <div class="user-canvas-info-BOX">
+                                <div class="user-profile-HH">
+                                    A
+                                </div>
+                                <div class="user-canvas-name-HH">
+                                    <div class="user-canvas-time-HH-B">
+                                        Anonymous
+                                    </div>
+                                    <div class="user-canvas-time-HH">
+                                        16 Nov 2020
+                                    </div>
+                                </div>
+                                <div class="user-canvas-btn-HH">
+                                    <div class="user-canvas-BTN-HH-BTN ripple">
+                                        Fork this canvas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="users-canvas-container-HH">
+                            <div class="user-canvas-HH">
+                                <div class="user-canvas-container-MAIN" id="userCanvas3">
+                                    
+                                </div>
+                            </div>
+                            <div class="user-canvas-info-BOX">
+                                <div class="user-profile-HH">
+                                    A
+                                </div>
+                                <div class="user-canvas-name-HH">
+                                    <div class="user-canvas-time-HH-B">
+                                        Anonymous
+                                    </div>
+                                    <div class="user-canvas-time-HH">
+                                        16 Nov 2020
+                                    </div>
+                                </div>
+                                <div class="user-canvas-btn-HH">
+                                    <div class="user-canvas-BTN-HH-BTN ripple">
+                                        Fork this canvas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="users-canvas-container-HH">
+                            <div class="user-canvas-HH">
+                                <div class="user-canvas-container-MAIN" id="userCanvas4">
+                                    
+                                </div>
+                            </div>
+                            <div class="user-canvas-info-BOX">
+                                <div class="user-profile-HH">
+                                    A
+                                </div>
+                                <div class="user-canvas-name-HH">
+                                    <div class="user-canvas-time-HH-B">
+                                        Anonymous
+                                    </div>
+                                    <div class="user-canvas-time-HH">
+                                        16 Nov 2020
+                                    </div>
+                                </div>
+                                <div class="user-canvas-btn-HH">
+                                    <div class="user-canvas-BTN-HH-BTN ripple">
+                                        Fork this canvas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="users-canvas-container-HH">
+                            <div class="user-canvas-HH">
+                                <div class="user-canvas-container-MAIN" id="userCanvas5">
+                                    
+                                </div>
+                            </div>
+                            <div class="user-canvas-info-BOX">
+                                <div class="user-profile-HH">
+                                    A
+                                </div>
+                                <div class="user-canvas-name-HH">
+                                    <div class="user-canvas-time-HH-B">
+                                        Anonymous
+                                    </div>
+                                    <div class="user-canvas-time-HH">
+                                        16 Nov 2020
+                                    </div>
+                                </div>
+                                <div class="user-canvas-btn-HH">
+                                    <div class="user-canvas-BTN-HH-BTN ripple">
+                                        Fork this canvas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="users-canvas-container-HH">
+                            <div class="user-canvas-HH">
+                                <div class="user-canvas-container-MAIN" id="userCanvas6">
+                                    
+                                </div>
+                            </div>
+                            <div class="user-canvas-info-BOX">
+                                <div class="user-profile-HH">
+                                    A
+                                </div>
+                                <div class="user-canvas-name-HH">
+                                    <div class="user-canvas-time-HH-B">
+                                        Anonymous
+                                    </div>
+                                    <div class="user-canvas-time-HH">
+                                        16 Nov 2020
+                                    </div>
+                                </div>
+                                <div class="user-canvas-btn-HH">
+                                    <div class="user-canvas-BTN-HH-BTN ripple">
+                                        Fork this canvas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="users-canvas-container-HH">
+                            <div class="user-canvas-HH">
+                                <div class="user-canvas-container-MAIN" id="userCanvas7">
+                                    
+                                </div>
+                            </div>
+                            <div class="user-canvas-info-BOX">
+                                <div class="user-profile-HH">
+                                    A
+                                </div>
+                                <div class="user-canvas-name-HH">
+                                    <div class="user-canvas-time-HH-B">
+                                        Anonymous
+                                    </div>
+                                    <div class="user-canvas-time-HH">
+                                        16 Nov 2020
+                                    </div>
+                                </div>
+                                <div class="user-canvas-btn-HH">
+                                    <div class="user-canvas-BTN-HH-BTN ripple">
+                                        Fork this canvas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="users-canvas-container-HH">
+                            <div class="user-canvas-HH">
+                                <div class="user-canvas-container-MAIN" id="userCanvas8">
+                                    
+                                </div>
+                            </div>
+                            <div class="user-canvas-info-BOX">
+                                <div class="user-profile-HH">
+                                    A
+                                </div>
+                                <div class="user-canvas-name-HH">
+                                    <div class="user-canvas-time-HH-B">
+                                        Anonymous
+                                    </div>
+                                    <div class="user-canvas-time-HH">
+                                        16 Oct 2020
+                                    </div>
+                                </div>
+                                <div class="user-canvas-btn-HH">
+                                    <div class="user-canvas-BTN-HH-BTN ripple">
+                                        Fork this canvas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <p class="canvas-gallery-para">
+                            This gallery shows the eight most recentl canvas. The owner of this code is not responsible for any canvas which is inappropriate or offensive to others in any way.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="bottomToolsContainer" class="flex bottom-tools fex__1">
+
+            <div id="colorSBtn" class="b-t-c-1">
+                <div class="bc-1">
+                    <div id="CSBA" class="color-container cc1"></div>
+                </div>
+                <div id="CSB1" class="bc-1">
+                    Color
+                </div>
+            </div>
+
+            <div id="backgroundSBtn" class="b-t-c-1">
+                <div class="bc-1">
+                    <div id="CSBB" class="color-container cc2"></div>
+                </div>
+                <div id="CSB2" class="bc-1">
+                    Background
+                </div>
+            </div>
+
+            <div id="thicknessSBtn" class="b-t-c-1">
+                <div class="bc-1">
+                    <div id="CSBC" class="pencil-1-container">
+                        <ion-icon class="pencil-1" name="pencil-outline"></ion-icon>
+                    </div>
+                </div>
+                <div id="CSB3" class="bc-1">
+                    Thickness
+                </div>
+            </div>
+
+            <!-- <div class="b-t-c-1 btc1-1">
+                <div class="upload-c-1-1">
+                    <ion-icon class="send-up-1" name="send"></ion-icon>
+                </div>
+            </div> -->
+
+        </div>
+
+        <div id="bottomSubmitCanvasBTN" class="upload-c-1-1 fex__2">
+            <div class="ripple send-btn-2 fex__1" id="sendBtn2" style="height: 50px; background: #037fe2; margin-right: 4px; width: 50px; border-radius: 100px; display: flex; justify-content: center; align-items: center; font-size: 20px; color: white; position: fixed; bottom: 20px; right: 10px;">
+                <ion-icon class="send-up-1" name="send"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <div id="sideMenuMain" class="sidemenu-container">
+        <div id="sideMenuMainBB" class="sidemenu-INN">
+            <a href="https://www.sololearn.com/Profile/17904120/?ref=app" target="_blank">
+                <div class="side-cont-BB">
+                    <div class="side-cont-BB-A"><ion-icon name="person-outline"></ion-icon></div>
+                    <div class="side-cont-BB-B">Follow Me</div>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/codeninja02/" target="_blank">
+                <div class="side-cont-BB">
+                    <div class="side-cont-BB-A"><ion-icon name="logo-instagram"></ion-icon></div>
+                    <div class="side-cont-BB-B">My Instagram</div>
+                </div>
+            </a>
+            <a href="https://github.com/codeninja02" target="_blank">
+                <div class="side-cont-BB">
+                    <div class="side-cont-BB-A"><ion-icon name="logo-github"></ion-icon></div>
+                    <div class="side-cont-BB-B">My Github</div>
+                </div>
+            </a>
+            <a id="publicGalleryDD">
+                <div class="side-cont-BB">
+                    <div class="side-cont-BB-A"><ion-icon name="color-palette-outline"></ion-icon></div>
+                    <div class="side-cont-BB-B">Public Gallery</div>
+                </div>
+            </a>
+            <a id="clearCanvasDD">
+                <div class="side-cont-BB">
+                    <div class="side-cont-BB-A"><ion-icon name="trash-outline"></ion-icon></div>
+                    <div class="side-cont-BB-B">Clear Canvas</div>
+                </div>
+            </a>
+            <a id="closeSideMenuBB">
+                <div class="side-cont-BB--B">
+                    <div class="side-cont-BB-A"><ion-icon name="close-outline"></ion-icon></div>
+                    <div class="side-cont-BB-B">Close</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    </div> <!-- Superbody End -->
+
+    <div id="super2" class="superbody-2 an-20">
+
+        <div id="goBackToHomeAB60" class="go-back-4">
+            <ion-icon class="go-back-4-icon-B" name="arrow-back-outline"></ion-icon>
+        </div>
+        
+        <div id="previewCanvasBorder2" class="prev-cont-2">
+            <div class="canvas-cont-2">
+                <div id="userDrawingPreview2" class="user-drawing-canvas-2"></div>
+            </div>
+        </div>
+
+        <div class="prev-input-cont-20">
+            <div class="prev-input-20">
+                <div id="nameValueB" class="prev-i-i-A">
+                    Enter Name!!
+                </div>
+                <div id="editNameBB" class="prev-i-i-B ripple">
+                    <ion-icon class="prev-i-icon-B" name="create-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+
+        <div id="uploadCanvasBtn" class="prev-btn-20 ripple">
+            Upload
+        </div>
+
+        <div class="p-u--cccc-24">
+            <p class="upload-cont-p-24">
+                By clicking the "Upload" button, your canvas will be uploaded to the public gallery. You can view your canvas by choosing the "Public Gallery" option in the Home.
+            </p>
+        </div>
+
+        <div id="alert1" class="alert-uploading">
+            <!-- <div class="alert-circle"></div> -->
+            <div class="alert-box">
+                <div class="alert-circle"></div>
+                <div class="alert-icon">
+                    <ion-icon id="uploadIconTxt1" class="alert-ii-icon" name="alert-outline"></ion-icon>
+                    <ion-icon id="uploadIconTxt2" class="alert-ii-icon" name="checkmark-outline"></ion-icon>
+                </div>
+                <div id="uploadingTxt1" class="alert-title">
+                    <div class="alert-title-A">
+                        You can only upload one canvas at a time :)
+                    </div>
+                    <!-- <div class="alert-title-B">
+                        <p class="saving"><span>.</span><span>.</span><span>.</span></p>
+                    </div> -->
+                </div>
+                <div id="uploadingTxt2" class="alert-title">
+                    <div class="alert-title-A">
+                        Uploaded Successfully
+                    </div>
+                </div>
+                <!-- <div class="alert-text-p">
+                    <p class="alert-paragraph"></p>
+                </div> -->
+            </div>
+
+            <div id="alertCrossBtnCC" class="alert-cross-btn"><ion-icon class="alert--icon ripple" name="close-outline"></ion-icon></div>
+        </div>
+
+    </div>
+
+    <div class="splash-screen-1">
+        <div class="spash-box">
+            <ion-icon class="splash-icon" name="color-wand"></ion-icon>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+    <!-- Javascript is encrypted but here 
+        but the full source code is available on my github :) 
+    -->
+    <script>
+        var _0x4328=["\x23\x31\x37\x31\x39\x32\x30","\x23\x63\x61\x63\x64\x64\x37","\x68\x65\x69\x67\x68\x74","\x23\x75\x73\x65\x72\x44\x72\x61\x77\x69\x6E\x67\x50\x72\x65\x76\x69\x65\x77\x32","\x77\x69\x64\x74\x68","\x73\x65\x74\x75\x70","\x63\x72\x65\x61\x74\x65\x43\x61\x6E\x76\x61\x73","\x23\x66\x66\x30\x30\x30\x30","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64","\x64\x72\x61\x77","\x73\x74\x72\x6F\x6B\x65","\x73\x74\x72\x6F\x6B\x65\x57\x65\x69\x67\x68\x74","\x6E\x6F\x46\x69\x6C\x6C","\x6C\x65\x6E\x67\x74\x68","\x62\x65\x67\x69\x6E\x53\x68\x61\x70\x65","\x78","\x79","\x76\x65\x72\x74\x65\x78","\x65\x6E\x64\x53\x68\x61\x70\x65","\x75\x73\x65\x72\x44\x72\x61\x77\x69\x6E\x67\x50\x72\x65\x76\x69\x65\x77\x32","\x2E\x63\x61\x6E\x76\x61\x73\x2D\x6D\x61\x69\x6E\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x6D\x6F\x75\x73\x65\x50\x72\x65\x73\x73\x65\x64","\x74\x6F\x75\x63\x68\x53\x74\x61\x72\x74\x65\x64","\x63\x61\x6E\x76\x61\x73\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x70\x61\x72\x65\x6E\x74","\x6D\x6F\x75\x73\x65\x52\x65\x6C\x65\x61\x73\x65\x64","\x74\x6F\x75\x63\x68\x45\x6E\x64\x65\x64","\x23\x73\x61\x76\x65\x42\x75\x74\x74\x6F\x6E","\x23\x63\x6C\x65\x61\x72\x42\x75\x74\x74\x6F\x6E","\x41\x49\x7A\x61\x53\x79\x42\x2D\x48\x66\x76\x39\x37\x50\x66\x36\x66\x44\x75\x37\x77\x72\x7A\x70\x66\x6A\x44\x59\x76\x64\x5A\x71\x4D\x6D\x39\x47\x54\x76\x67","\x70\x61\x69\x6E\x74\x2D\x70\x6C\x61\x79\x67\x72\x6F\x75\x6E\x64\x2E\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x61\x69\x6E\x74\x2D\x70\x6C\x61\x79\x67\x72\x6F\x75\x6E\x64\x2E\x66\x69\x72\x65\x62\x61\x73\x65\x69\x6F\x2E\x63\x6F\x6D","\x70\x61\x69\x6E\x74\x2D\x70\x6C\x61\x79\x67\x72\x6F\x75\x6E\x64\x2E\x61\x70\x70\x73\x70\x6F\x74\x2E\x63\x6F\x6D","\x31\x38\x34\x39\x34\x33\x31\x38\x31\x38\x31\x32","\x69\x6E\x69\x74\x69\x61\x6C\x69\x7A\x65\x41\x70\x70","\x64\x61\x74\x61\x62\x61\x73\x65","\x69\x64","\x64\x72\x61\x77\x69\x6E\x67\x73","\x72\x65\x66","\x76\x61\x6C\x75\x65","\x6F\x6E\x63\x65","\x70\x75\x73\x68","\x67\x65\x74\x44\x61\x74\x65","\x67\x65\x74\x4D\x6F\x6E\x74\x68","\x67\x65\x74\x46\x75\x6C\x6C\x59\x65\x61\x72","\x4A\x61\x6E","\x46\x65\x62","\x4D\x61\x72","\x41\x70\x72","\x4D\x61\x79","\x4A\x75\x6E","\x4A\x75\x6C","\x41\x75\x67","\x53\x65\x70","\x4F\x63\x74","\x4E\x6F\x76","\x44\x65\x63","\x20","\x76\x61\x6C","\x23\x6E\x61\x6D\x65\x49\x6E\x70\x75\x74\x31","\x6B\x65\x79\x73","\x6E\x75\x6D\x43\x68\x69\x6C\x64\x72\x65\x6E","\x72\x65\x6D\x6F\x76\x65","\x63\x68\x69\x6C\x64","\x54\x68\x65\x20\x72\x65\x61\x64\x20\x66\x61\x69\x6C\x65\x64\x3A\x20","\x63\x6F\x64\x65","\x6C\x6F\x67","\x6F\x6E","\x68\x74\x6D\x6C","\x64\x72\x61\x77\x69\x6E\x67\x73\x2F","\x64\x72\x61\x77\x69\x6E\x67","\x2E\x70\x69\x63\x6B\x72\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72\x2D\x32","\x6E\x61\x6E\x6F","\x72\x67\x62\x28\x32\x33\x20\x32\x35\x20\x33\x32\x29","\x72\x67\x62\x28\x31\x37\x36\x20\x31\x39\x30\x20\x31\x39\x37\x29","\x72\x67\x62\x28\x39\x36\x20\x31\x32\x35\x20\x31\x33\x39\x29","\x72\x67\x62\x28\x32\x34\x34\x20\x36\x37\x20\x35\x34\x29","\x72\x67\x62\x28\x31\x35\x36\x20\x33\x39\x20\x31\x37\x36\x29","\x72\x67\x62\x28\x31\x30\x33\x20\x35\x38\x20\x31\x38\x33\x29","\x72\x67\x62\x28\x36\x33\x20\x38\x31\x20\x31\x38\x31\x29","\x72\x67\x62\x28\x33\x33\x20\x31\x35\x30\x20\x32\x34\x33\x29","\x72\x67\x62\x28\x30\x20\x31\x35\x30\x20\x31\x33\x36\x29","\x72\x67\x62\x28\x37\x36\x20\x31\x37\x35\x20\x38\x30\x29","\x72\x67\x62\x28\x32\x35\x35\x20\x32\x33\x35\x20\x35\x39\x29","\x72\x67\x62\x28\x32\x35\x35\x20\x31\x35\x32\x20\x30\x29","\x72\x67\x62\x28\x32\x35\x35\x20\x32\x35\x35\x20\x32\x35\x35\x29","\x63\x72\x65\x61\x74\x65","\x0D\x0A\x23\x73\x6C\x69\x64\x65\x72\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72\x20\x7B\x0D\x0A\x20\x20\x20\x20\x2D\x2D\x76\x61\x6C\x75\x65\x20\x3A\x20\x30\x20\x3B\x0D\x0A\x20\x20\x20\x20\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x74\x72\x61\x63\x6B\x2D\x63\x6F\x6C\x6F\x72\x20\x3A\x20\x23\x42\x30\x45\x46\x45\x46\x34\x35\x20\x3B\x0D\x0A\x20\x20\x20\x20\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x74\x68\x75\x6D\x62\x2D\x63\x6F\x6C\x6F\x72\x20\x3A\x20\x23\x66\x66\x66\x20\x3B\x0D\x0A\x20\x20\x20\x20\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x66\x69\x6C\x6C\x2D\x63\x6F\x6C\x6F\x72\x20\x20\x3A\x20\x23\x33\x31\x44\x33\x43\x36\x20\x3B\x0D\x0A\x20\x20\x20\x20\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x66\x69\x6C\x6C\x32\x2D\x63\x6F\x6C\x6F\x72\x20\x3A\x20\x23\x30\x30\x41\x32\x42\x42\x20\x3B\x0D\x0A\x0D\x0A\x20\x20\x20\x20\x77\x69\x64\x74\x68\x20\x3A\x20\x31\x30\x30\x25\x20\x3B\x0D\x0A\x20\x20\x20\x20\x68\x65\x69\x67\x68\x74\x3A\x20\x31\x72\x65\x6D\x20\x3B\x0D\x0A\x20\x20\x20\x20\x64\x69\x73\x70\x6C\x61\x79\x3A\x20\x66\x6C\x65\x78\x20\x3B\x0D\x0A\x20\x20\x20\x20\x61\x6C\x69\x67\x6E\x2D\x69\x74\x65\x6D\x73\x3A\x20\x63\x65\x6E\x74\x65\x72\x20\x3B\x0D\x0A\x20\x20\x20\x20\x6A\x75\x73\x74\x69\x66\x79\x2D\x63\x6F\x6E\x74\x65\x6E\x74\x3A\x20\x63\x65\x6E\x74\x65\x72\x20\x3B\x0D\x0A\x20\x20\x20\x20\x70\x61\x64\x64\x69\x6E\x67\x3A\x20\x30\x20\x3B\x0D\x0A\x20\x20\x20\x20\x6D\x61\x72\x67\x69\x6E\x3A\x20\x30\x20\x3B\x0D\x0A\x0D\x0A\x20\x20\x20\x20\x61\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x3A\x20\x63\x6F\x6C\x6F\x72\x2D\x63\x79\x63\x6C\x65\x20\x31\x73\x20\x69\x6E\x66\x69\x6E\x69\x74\x65\x20\x61\x6C\x74\x65\x72\x6E\x61\x74\x65\x20\x6C\x69\x6E\x65\x61\x72\x3B\x0D\x0A\x7D\x0D\x0A\x0D\x0A\x40\x6B\x65\x79\x66\x72\x61\x6D\x65\x73\x20\x63\x6F\x6C\x6F\x72\x2D\x63\x79\x63\x6C\x65\x20\x7B\x0D\x0A\x20\x20\x20\x20\x30\x25\x20\x7B\x0D\x0A\x20\x20\x20\x20\x20\x20\x20\x20\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x66\x69\x6C\x6C\x2D\x63\x6F\x6C\x6F\x72\x20\x20\x3A\x20\x23\x30\x33\x37\x66\x65\x32\x20\x3B\x0D\x0A\x20\x20\x20\x20\x7D\x0D\x0A\x20\x20\x20\x20\x31\x30\x30\x25\x20\x7B\x0D\x0A\x20\x20\x20\x20\x20\x20\x20\x20\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x66\x69\x6C\x6C\x2D\x63\x6F\x6C\x6F\x72\x20\x3A\x20\x23\x30\x33\x37\x66\x65\x32\x20\x3B\x0D\x0A\x20\x20\x20\x20\x7D\x0D\x0A\x7D\x0D\x0A\x0D\x0A\x23\x73\x6C\x69\x64\x65\x72\x20\x7B\x0D\x0A\x20\x20\x20\x20\x2D\x77\x65\x62\x6B\x69\x74\x2D\x61\x70\x70\x65\x61\x72\x61\x6E\x63\x65\x3A\x20\x6E\x6F\x6E\x65\x3B\x0D\x0A\x20\x20\x20\x20\x61\x70\x70\x65\x61\x72\x61\x6E\x63\x65\x3A\x20\x6E\x6F\x6E\x65\x3B\x0D\x0A\x0D\x0A\x20\x20\x20\x20\x68\x65\x69\x67\x68\x74\x3A\x20\x31\x72\x65\x6D\x20\x3B\x0D\x0A\x20\x20\x20\x20\x77\x69\x64\x74\x68\x3A\x20\x31\x30\x30\x25\x20\x3B\x0D\x0A\x20\x20\x20\x20\x6D\x61\x72\x67\x69\x6E\x20\x3A\x20\x30\x20\x3B\x0D\x0A\x20\x20\x20\x20\x70\x61\x64\x64\x69\x6E\x67\x3A\x20\x30\x20\x3B\x0D\x0A\x0D\x0A\x20\x20\x20\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x3A\x20\x23\x30\x30\x30\x30\x30\x30\x30\x30\x20\x3B\x0D\x0A\x20\x20\x20\x20\x6F\x75\x74\x6C\x69\x6E\x65\x3A\x20\x6E\x6F\x6E\x65\x20\x3B\x0D\x0A\x20\x20\x20\x20\x7A\x2D\x69\x6E\x64\x65\x78\x3A\x20\x39\x39\x20\x3B\x0D\x0A\x7D\x0D\x0A\x0D\x0A\x23\x73\x6C\x69\x64\x65\x72\x2D\x74\x72\x61\x63\x6B\x20\x7B\x0D\x0A\x20\x20\x20\x20\x70\x6F\x73\x69\x74\x69\x6F\x6E\x3A\x20\x61\x62\x73\x6F\x6C\x75\x74\x65\x20\x3B\x0D\x0A\x20\x20\x20\x20\x74\x6F\x70\x3A\x20\x63\x61\x6C\x63\x28\x35\x30\x25\x20\x2D\x20\x30\x2E\x32\x35\x72\x65\x6D\x29\x3B\x0D\x0A\x20\x20\x20\x20\x6C\x65\x66\x74\x3A\x20\x30\x20\x3B\x0D\x0A\x20\x20\x20\x20\x77\x69\x64\x74\x68\x3A\x20\x31\x30\x30\x25\x20\x3B\x0D\x0A\x20\x20\x20\x20\x68\x65\x69\x67\x68\x74\x3A\x20\x30\x2E\x35\x72\x65\x6D\x20\x3B\x0D\x0A\x20\x20\x20\x20\x62\x6F\x72\x64\x65\x72\x2D\x72\x61\x64\x69\x75\x73\x3A\x20\x30\x2E\x32\x35\x72\x65\x6D\x20\x3B\x0D\x0A\x20\x20\x20\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x3A\x20\x23\x33\x30\x33\x36\x34\x34\x20\x3B\x0D\x0A\x20\x20\x20\x20\x6F\x76\x65\x72\x66\x6C\x6F\x77\x3A\x20\x68\x69\x64\x64\x65\x6E\x20\x3B\x0D\x0A\x7D\x0D\x0A\x0D\x0A\x23\x73\x6C\x69\x64\x65\x72\x2D\x74\x72\x61\x63\x6B\x3A\x3A\x62\x65\x66\x6F\x72\x65\x20\x7B\x0D\x0A\x20\x20\x20\x20\x70\x6F\x73\x69\x74\x69\x6F\x6E\x3A\x20\x61\x62\x73\x6F\x6C\x75\x74\x65\x20\x3B\x0D\x0A\x20\x20\x20\x20\x63\x6F\x6E\x74\x65\x6E\x74\x3A\x20\x22\x22\x20\x3B\x0D\x0A\x20\x20\x20\x20\x6C\x65\x66\x74\x3A\x20\x63\x61\x6C\x63\x28\x2D\x31\x30\x30\x25\x20\x2B\x20\x31\x2E\x35\x72\x65\x6D\x29\x20\x3B\x0D\x0A\x20\x20\x20\x20\x74\x6F\x70\x20\x3A\x20\x30\x20\x3B\x0D\x0A\x20\x20\x20\x20\x77\x69\x64\x74\x68\x20\x3A\x20\x63\x61\x6C\x63\x28\x31\x30\x30\x25\x20\x2D\x20\x31\x72\x65\x6D\x29\x20\x3B\x0D\x0A\x20\x20\x20\x20\x68\x65\x69\x67\x68\x74\x3A\x20\x31\x30\x30\x25\x20\x3B\x0D\x0A\x20\x20\x20\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x3A\x20\x76\x61\x72\x28\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x66\x69\x6C\x6C\x2D\x63\x6F\x6C\x6F\x72\x29\x20\x3B\x0D\x0A\x20\x20\x20\x20\x74\x72\x61\x6E\x73\x69\x74\x69\x6F\x6E\x3A\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x20\x33\x30\x30\x6D\x73\x20\x65\x61\x73\x65\x2D\x6F\x75\x74\x20\x3B\x0D\x0A\x20\x20\x20\x20\x74\x72\x61\x6E\x73\x66\x6F\x72\x6D\x2D\x6F\x72\x69\x67\x69\x6E\x3A\x20\x31\x30\x30\x25\x20\x30\x25\x3B\x0D\x0A\x20\x20\x20\x20\x74\x72\x61\x6E\x73\x66\x6F\x72\x6D\x3A\x20\x74\x72\x61\x6E\x73\x6C\x61\x74\x65\x58\x28\x63\x61\x6C\x63\x28\x20\x76\x61\x72\x28\x2D\x2D\x76\x61\x6C\x75\x65\x29\x20\x2A\x20\x31\x30\x30\x25\x20\x29\x29\x20\x73\x63\x61\x6C\x65\x58\x28\x31\x2E\x32\x29\x3B\x0D\x0A\x7D\x0D\x0A\x0D\x0A\x23\x73\x6C\x69\x64\x65\x72\x3A\x3A\x2D\x77\x65\x62\x6B\x69\x74\x2D\x73\x6C\x69\x64\x65\x72\x2D\x74\x68\x75\x6D\x62\x20\x7B\x0D\x0A\x20\x20\x20\x20\x2D\x77\x65\x62\x6B\x69\x74\x2D\x61\x70\x70\x65\x61\x72\x61\x6E\x63\x65\x3A\x20\x6E\x6F\x6E\x65\x3B\x0D\x0A\x20\x20\x20\x20\x61\x70\x70\x65\x61\x72\x61\x6E\x63\x65\x3A\x20\x6E\x6F\x6E\x65\x3B\x0D\x0A\x20\x20\x20\x20\x77\x69\x64\x74\x68\x20\x3A\x20\x31\x72\x65\x6D\x20\x3B\x0D\x0A\x20\x20\x20\x20\x68\x65\x69\x67\x68\x74\x3A\x20\x31\x72\x65\x6D\x20\x3B\x0D\x0A\x20\x20\x20\x20\x62\x6F\x72\x64\x65\x72\x2D\x72\x61\x64\x69\x75\x73\x3A\x20\x35\x30\x25\x20\x3B\x0D\x0A\x20\x20\x20\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x3A\x20\x76\x61\x72\x28\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x74\x68\x75\x6D\x62\x2D\x63\x6F\x6C\x6F\x72\x29\x20\x3B\x0D\x0A\x20\x20\x20\x20\x63\x75\x72\x73\x6F\x72\x3A\x20\x70\x6F\x69\x6E\x74\x65\x72\x20\x3B\x0D\x0A\x20\x20\x20\x20\x7A\x2D\x69\x6E\x64\x65\x78\x3A\x20\x39\x39\x20\x3B\x0D\x0A\x20\x20\x20\x20\x62\x6F\x72\x64\x65\x72\x3A\x20\x33\x70\x78\x20\x73\x6F\x6C\x69\x64\x20\x76\x61\x72\x28\x2D\x2D\x73\x6C\x69\x64\x65\x72\x2D\x66\x69\x6C\x6C\x2D\x63\x6F\x6C\x6F\x72\x29\x20\x3B\x0D\x0A\x20\x20\x20\x20\x74\x72\x61\x6E\x73\x69\x74\x69\x6F\x6E\x3A\x20\x62\x6F\x72\x64\x65\x72\x2D\x63\x6F\x6C\x6F\x72\x20\x33\x30\x30\x6D\x73\x20\x65\x61\x73\x65\x2D\x6F\x75\x74\x20\x3B\x0D\x0A\x7D\x0D\x0A\x0D\x0A\x23\x76\x61\x6C\x75\x65\x20\x7B\x0D\x0A\x20\x20\x70\x6F\x73\x69\x74\x69\x6F\x6E\x3A\x20\x61\x62\x73\x6F\x6C\x75\x74\x65\x3B\x0D\x0A\x20\x20\x62\x6F\x74\x74\x6F\x6D\x3A\x20\x63\x61\x6C\x63\x28\x31\x30\x30\x25\x20\x2B\x20\x30\x2E\x35\x72\x65\x6D\x29\x3B\x0D\x0A\x20\x20\x6C\x65\x66\x74\x3A\x20\x63\x61\x6C\x63\x28\x20\x76\x61\x72\x28\x2D\x2D\x76\x61\x6C\x75\x65\x29\x20\x2A\x20\x63\x61\x6C\x63\x28\x31\x30\x30\x25\x20\x2D\x20\x31\x72\x65\x6D\x29\x20\x2D\x20\x30\x2E\x30\x72\x65\x6D\x29\x3B\x0D\x0A\x20\x20\x66\x6F\x6E\x74\x2D\x73\x69\x7A\x65\x3A\x20\x31\x30\x70\x78\x3B\x0D\x0A\x20\x20\x6D\x69\x6E\x2D\x77\x69\x64\x74\x68\x3A\x20\x32\x63\x68\x3B\x0D\x0A\x20\x20\x6D\x61\x78\x2D\x68\x65\x69\x67\x68\x74\x3A\x20\x32\x63\x68\x3B\x0D\x0A\x20\x20\x62\x6F\x72\x64\x65\x72\x2D\x72\x61\x64\x69\x75\x73\x3A\x20\x34\x70\x78\x3B\x0D\x0A\x20\x20\x70\x6F\x69\x6E\x74\x65\x72\x2D\x65\x76\x65\x6E\x74\x73\x3A\x20\x6E\x6F\x6E\x65\x3B\x0D\x0A\x20\x20\x70\x61\x64\x64\x69\x6E\x67\x3A\x20\x30\x2E\x35\x72\x65\x6D\x3B\x0D\x0A\x20\x20\x64\x69\x73\x70\x6C\x61\x79\x3A\x20\x66\x6C\x65\x78\x3B\x0D\x0A\x20\x20\x61\x6C\x69\x67\x6E\x2D\x69\x74\x65\x6D\x73\x3A\x20\x63\x65\x6E\x74\x65\x72\x3B\x0D\x0A\x20\x20\x6A\x75\x73\x74\x69\x66\x79\x2D\x63\x6F\x6E\x74\x65\x6E\x74\x3A\x20\x63\x65\x6E\x74\x65\x72\x3B\x0D\x0A\x20\x20\x63\x6F\x6C\x6F\x72\x3A\x20\x23\x46\x46\x46\x3B\x0D\x0A\x20\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x3A\x20\x23\x30\x33\x37\x66\x65\x32\x3B\x0D\x0A\x20\x20\x6F\x70\x61\x63\x69\x74\x79\x3A\x20\x31\x3B\x0D\x0A\x20\x20\x74\x72\x61\x6E\x73\x66\x6F\x72\x6D\x3A\x20\x74\x72\x61\x6E\x73\x6C\x61\x74\x65\x58\x28\x63\x61\x6C\x63\x28\x2D\x35\x30\x25\x20\x2B\x20\x30\x2E\x35\x72\x65\x6D\x29\x29\x3B\x0D\x0A\x20\x20\x74\x72\x61\x6E\x73\x69\x74\x69\x6F\x6E\x3A\x20\x6C\x65\x66\x74\x20\x33\x30\x30\x6D\x73\x20\x65\x61\x73\x65\x2D\x6F\x75\x74\x20\x2C\x20\x6F\x70\x61\x63\x69\x74\x79\x20\x33\x30\x30\x6D\x73\x20\x33\x30\x30\x6D\x73\x20\x65\x61\x73\x65\x2D\x6F\x75\x74\x20\x2C\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x20\x33\x30\x30\x6D\x73\x20\x65\x61\x73\x65\x2D\x6F\x75\x74\x3B\x0D\x0A\x20\x20\x7A\x2D\x69\x6E\x64\x65\x78\x3A\x20\x31\x3B\x0D\x0A\x7D\x0D\x0A\x0D\x0A\x23\x76\x61\x6C\x75\x65\x3A\x3A\x62\x65\x66\x6F\x72\x65\x20\x7B\x0D\x0A\x20\x20\x70\x6F\x73\x69\x74\x69\x6F\x6E\x3A\x20\x61\x62\x73\x6F\x6C\x75\x74\x65\x3B\x0D\x0A\x20\x20\x63\x6F\x6E\x74\x65\x6E\x74\x3A\x20\x22\x22\x3B\x0D\x0A\x20\x20\x74\x6F\x70\x3A\x20\x31\x30\x30\x25\x3B\x0D\x0A\x20\x20\x6C\x65\x66\x74\x3A\x20\x35\x30\x25\x3B\x0D\x0A\x20\x20\x77\x69\x64\x74\x68\x3A\x20\x30\x2E\x36\x72\x65\x6D\x3B\x0D\x0A\x20\x20\x68\x65\x69\x67\x68\x74\x3A\x20\x30\x2E\x36\x72\x65\x6D\x3B\x0D\x0A\x20\x20\x62\x6F\x72\x64\x65\x72\x2D\x72\x61\x64\x69\x75\x73\x3A\x20\x32\x70\x78\x3B\x0D\x0A\x20\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x3A\x20\x69\x6E\x68\x65\x72\x69\x74\x3B\x0D\x0A\x20\x20\x74\x72\x61\x6E\x73\x66\x6F\x72\x6D\x3A\x20\x74\x72\x61\x6E\x73\x6C\x61\x74\x65\x28\x2D\x35\x30\x25\x2C\x2D\x38\x30\x25\x29\x20\x72\x6F\x74\x61\x74\x65\x28\x34\x35\x64\x65\x67\x29\x3B\x0D\x0A\x20\x20\x7A\x2D\x69\x6E\x64\x65\x78\x3A\x20\x2D\x31\x3B\x0D\x0A\x7D\x0D\x0A\x0D\x0A\x23\x73\x6C\x69\x64\x65\x72\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72\x3A\x68\x6F\x76\x65\x72\x20\x20\x23\x76\x61\x6C\x75\x65\x20\x7B\x0D\x0A\x20\x20\x20\x20\x6F\x70\x61\x63\x69\x74\x79\x3A\x20\x31\x20\x3B\x0D\x0A\x7D\x20\x0D\x0A","\x67\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x6D\x69\x6E","\x6D\x61\x78","\x73\x74\x65\x70","\x6D\x69\x6E\x57\x69\x64\x74\x68","\x73\x74\x79\x6C\x65","\x31\x30\x72\x65\x6D","\x6D\x69\x6E\x48\x65\x69\x67\x68\x74","\x31\x72\x65\x6D","\x70\x6F\x73\x69\x74\x69\x6F\x6E","\x72\x65\x6C\x61\x74\x69\x76\x65","\x72\x6F\x6F\x74","\x6F\x70\x65\x6E","\x61\x74\x74\x61\x63\x68\x53\x68\x61\x64\x6F\x77","\x64\x72\x61\x67\x67\x69\x6E\x67","\x75\x70\x64\x61\x74\x65","\x69\x6E\x70\x75\x74","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x64\x69\x76","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x74\x79\x70\x65","\x72\x61\x6E\x67\x65","\x73\x6C\x69\x64\x65\x72","\x73\x6C\x69\x64\x65\x72\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x73\x6C\x69\x64\x65\x72\x2D\x74\x72\x61\x63\x6B","\x62\x69\x6E\x64","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x69\x6E\x6E\x65\x72\x54\x65\x78\x74","\x2D\x2D\x76\x61\x6C\x75\x65","\x73\x65\x74\x50\x72\x6F\x70\x65\x72\x74\x79","\x6F\x6E\x6C\x6F\x61\x64","\x63\x75\x73\x74\x6F\x6D\x2D\x73\x6C\x69\x64\x65\x72","\x64\x65\x66\x69\x6E\x65","\x66\x61\x64\x65\x4F\x75\x74","\x23\x61\x62\x6F\x75\x74\x53\x63\x72\x65\x65\x6E","\x23\x67\x61\x6C\x6C\x65\x72\x79\x53\x63\x72\x65\x65\x6E","\x23\x67\x6F\x42\x61\x63\x6B\x54\x4F\x4D\x45\x4E\x55\x6F\x70\x74\x73\x32","\x23\x63\x68\x6F\x6F\x73\x65\x43\x6F\x6C\x6F\x72","\x23\x73\x65\x74\x54\x68\x69\x63\x6B\x6E\x65\x73\x73","\x23\x61\x6C\x65\x72\x74\x31","\x30\x70\x78","\x63\x61\x6C\x63\x28\x30\x70\x78\x29","\x63\x73\x73","\x23\x73\x69\x64\x65\x4D\x65\x6E\x75\x4D\x61\x69\x6E","\x63\x6C\x69\x63\x6B","\x61\x6E\x69\x6D\x61\x74\x65","\x2E\x68\x6F\x6D\x65\x32\x42\x74\x6E\x73\x41\x6C\x6C","\x23\x61\x38\x61\x37\x61\x64","\x23\x43\x53\x42\x31","\x23\x43\x53\x42\x32","\x23\x43\x53\x42\x33","\x32\x70\x78\x20\x73\x6F\x6C\x69\x64\x20\x23\x36\x62\x37\x33\x38\x61","\x23\x43\x53\x42\x41","\x23\x43\x53\x42\x42","\x23\x36\x62\x37\x33\x38\x61","\x23\x43\x53\x42\x43","\x65\x64\x69\x74\x2D\x74\x6F\x6F\x6C\x73\x2D\x32","\x61\x64\x64\x43\x6C\x61\x73\x73","\x65\x64\x69\x74\x2D\x74\x6F\x6F\x6C\x73\x2D\x33","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x65\x64\x69\x74\x2D\x74\x6F\x6F\x6C\x73","\x23\x69\x6D\x70\x43\x6F\x6E\x74\x31","\x66\x61\x64\x65\x49\x6E","\x64\x65\x6C\x61\x79","\x23\x62\x6F\x74\x74\x6F\x6D\x4F\x70\x74\x69\x6F\x6E\x73\x43\x6F\x6E\x74","\x66\x65\x78\x5F\x5F\x33","\x2E\x66\x65\x78\x5F\x5F\x31","\x66\x65\x78\x5F\x5F\x34","\x2E\x66\x65\x78\x5F\x5F\x32","\x23\x61\x62\x6F\x75\x74\x42\x74\x6E","\x23\x63\x6F\x64\x65\x47\x61\x6C\x6C\x65\x72\x79\x4F\x70\x65\x6E\x42\x74\x6E","\x23\x63\x6C\x65\x61\x72\x43\x61\x6E\x76\x61\x73\x42\x74\x6E","\x2E\x67\x6F\x42\x61\x63\x6B\x54\x6F\x42\x61\x73\x69\x63\x32","\x73\x65\x6C\x65\x63\x74\x69\x6F\x6E\x53\x74\x61\x72\x74","\x73\x65\x6C\x65\x63\x74\x69\x6F\x6E\x45\x6E\x64","\x66\x6F\x63\x75\x73","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x73\x68\x6F\x77","\x23\x62\x6F\x74\x74\x6F\x6D\x54\x6F\x6F\x6C\x73\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x23\x62\x6F\x74\x74\x6F\x6D\x53\x75\x62\x6D\x69\x74\x43\x61\x6E\x76\x61\x73\x42\x54\x4E","\x66\x6F\x63\x75\x73\x6F\x75\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x23\x65\x64\x69\x74\x4E\x61\x6D\x65\x42\x74\x6E\x31","\x68\x69\x64\x65","\x2E\x63\x6F\x70\x79\x72\x69\x67\x68\x74\x5F\x6C\x69\x6E\x6B","\x66\x69\x78\x65\x64","\x72\x65\x73\x69\x7A\x65","\x77\x68\x69\x74\x65","\x32\x70\x78\x20\x73\x6F\x6C\x69\x64\x20\x77\x68\x69\x74\x65","\x23\x63\x6F\x6C\x6F\x72\x53\x42\x74\x6E","\x23\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x53\x42\x74\x6E","\x23\x74\x68\x69\x63\x6B\x6E\x65\x73\x73\x53\x42\x74\x6E","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72","\x62\x6F\x72\x64\x65\x72","\x32\x70\x78\x20\x73\x6F\x6C\x69\x64\x20","\x23\x70\x72\x65\x76\x69\x65\x77\x43\x61\x6E\x76\x61\x73\x42\x6F\x72\x64\x65\x72\x32","\x2C","","\x72\x65\x70\x6C\x61\x63\x65","\x29","\x20\x2F\x20","\x30\x2E\x31\x29","\x2E\x63\x6F\x6C\x6F\x72\x2D\x63\x3A\x6E\x6F\x74\x28\x2E\x63\x6F\x6C\x6F\x72\x2D\x63\x3A\x66\x69\x72\x73\x74\x2D\x63\x68\x69\x6C\x64\x29","\x2E\x70\x63\x72\x2D\x62\x75\x74\x74\x6F\x6E","\x2E\x63\x6F\x6C\x6F\x72\x2D\x63\x3A\x6E\x74\x68\x2D\x63\x68\x69\x6C\x64\x28\x31\x29","\x72\x67\x62\x61\x28\x30\x2C\x20\x30\x2C\x20\x30\x2C\x20\x30\x2E\x37\x34\x29","\x6D\x61\x74\x63\x68","\x74\x72\x69\x6D","\x73\x6C\x69\x63\x65","\x63\x68\x61\x6E\x67\x65","\x23","\x74\x6F\x52\x47\x42\x41","\x2E\x73\x75\x70\x65\x72\x62\x6F\x64\x79\x2D\x31","\x73\x75\x70\x65\x72\x62\x6F\x64\x79\x2D\x32\x2D\x42","\x73\x75\x70\x65\x72\x62\x6F\x64\x79\x2D\x32","\x23\x73\x75\x70\x65\x72\x32","\x23\x73\x65\x6E\x64\x42\x74\x6E\x32","\x23\x67\x6F\x42\x61\x63\x6B\x54\x6F\x48\x6F\x6D\x65\x41\x42\x36\x30","\x63\x68\x61\x6E\x67\x65\x20\x6B\x65\x79\x75\x70\x20\x70\x61\x73\x74\x65","\x74\x65\x78\x74","\x23\x6E\x61\x6D\x65\x56\x61\x6C\x75\x65\x42","\x23\x65\x64\x69\x74\x4E\x61\x6D\x65\x42\x42","\x74\x72\x61\x6E\x73\x66\x6F\x72\x6D","\x72\x6F\x74\x61\x74\x65\x28\x31\x38\x30\x64\x65\x67\x29","\x2E\x61\x6C\x65\x72\x74\x2D\x2D\x69\x63\x6F\x6E","\x23\x61\x6C\x65\x72\x74\x43\x72\x6F\x73\x73\x42\x74\x6E\x43\x43","\x72\x6F\x74\x61\x74\x65\x28\x30\x64\x65\x67\x29","\x23\x75\x70\x6C\x6F\x61\x64\x69\x6E\x67\x54\x78\x74\x31","\x23\x75\x70\x6C\x6F\x61\x64\x69\x6E\x67\x54\x78\x74\x32","\x23\x75\x70\x6C\x6F\x61\x64\x49\x63\x6F\x6E\x54\x78\x74\x31","\x23\x75\x70\x6C\x6F\x61\x64\x49\x63\x6F\x6E\x54\x78\x74\x32","\x23\x75\x70\x6C\x6F\x61\x64\x43\x61\x6E\x76\x61\x73\x42\x74\x6E","\x32\x38\x30\x70\x78","\x63\x61\x6C\x63\x28\x31\x30\x30\x25\x20\x2D\x20\x34\x30\x25\x20\x2D\x20\x32\x30\x70\x78\x29","\x23\x6F\x70\x65\x6E\x53\x69\x64\x65\x4D\x65\x6E\x75\x49\x63\x6F\x6E","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x63\x6C\x6F\x73\x65\x53\x69\x64\x65\x4D\x65\x6E\x75\x42\x42","\x23\x63\x6C\x65\x61\x72\x43\x61\x6E\x76\x61\x73\x44\x44","\x23\x70\x75\x62\x6C\x69\x63\x47\x61\x6C\x6C\x65\x72\x79\x44\x44","\x23\x67\x6F\x46\x72\x6F\x6D\x47\x61\x6C\x6C\x65\x72\x79\x54\x6F\x42\x61\x73\x69\x63\x34","\x62\x6F\x78\x2D\x73\x68\x61\x64\x6F\x77","\x72\x67\x62\x28\x32\x36\x20\x32\x39\x20\x33\x37\x29\x20\x32\x30\x70\x78\x20\x32\x30\x70\x78\x20\x35\x30\x70\x78\x20\x31\x30\x70\x78\x20\x69\x6E\x73\x65\x74","\x23\x73\x63\x72\x6F\x6C\x6C\x43\x68\x65\x63\x6B\x44\x44\x44\x44","\x73\x63\x72\x6F\x6C\x6C\x54\x6F\x70","\x72\x67\x62\x28\x30\x20\x30\x20\x30\x29\x20\x30\x70\x78\x20\x30\x70\x78\x20\x30\x70\x78","\x2E\x67\x6F\x42\x61\x63\x6B\x54\x6F\x42\x61\x73\x69\x63\x34","\x72\x67\x62\x28\x30\x20\x30\x20\x30\x29\x20\x36\x70\x78\x20\x36\x70\x78\x20\x38\x70\x78","\x73\x63\x72\x6F\x6C\x6C","\x23\x63\x61\x6E\x76\x61\x73\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x5F\x75\x73\x65\x72\x4E\x6F\x64\x65","\x62\x67","\x74\x68\x69\x63\x6B\x6E\x65\x73\x73","\x23\x36\x39\x35\x63\x65\x35","\x23\x64\x31\x36\x35\x37\x62","\x23\x32\x65\x61\x64\x65\x31","\x23\x35\x39\x38\x33\x39\x32","\x23\x63\x36\x35\x39\x38\x35","\x23\x33\x33\x62\x32\x36\x32","\x23\x32\x64\x38\x62\x62\x34","\x23\x66\x38\x35\x63\x36\x39","\x23\x66\x33\x39\x34\x32\x38","\x23\x46\x39\x35\x37\x33\x38","\x23\x34\x43\x41\x46\x35\x30","\x23\x38\x66\x34\x36\x66\x63","\x23\x75\x73\x65\x72\x4C\x6F\x61\x64\x69\x6E\x67\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72\x38","\x6E\x61\x6D\x65","\x64\x61\x74\x65","\x75\x73\x65\x72\x43\x61\x6E\x76\x61\x73","\x2E\x75\x73\x65\x72\x73\x2D\x63\x61\x6E\x76\x61\x73\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72\x2D\x48\x48\x3A\x6E\x74\x68\x2D\x63\x68\x69\x6C\x64\x28","\x29\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x69\x6E\x66\x6F\x2D\x42\x4F\x58\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x6E\x61\x6D\x65\x2D\x48\x48\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x74\x69\x6D\x65\x2D\x48\x48\x2D\x42","\x29\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x69\x6E\x66\x6F\x2D\x42\x4F\x58\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x6E\x61\x6D\x65\x2D\x48\x48\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x74\x69\x6D\x65\x2D\x48\x48","\x29\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x69\x6E\x66\x6F\x2D\x42\x4F\x58\x20\x2E\x75\x73\x65\x72\x2D\x70\x72\x6F\x66\x69\x6C\x65\x2D\x48\x48","\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72","\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x69\x6E\x66\x6F\x2D\x42\x4F\x58\x3A\x6E\x74\x68\x2D\x63\x68\x69\x6C\x64\x28","\x29\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x69\x6E\x66\x6F\x2D\x42\x4F\x58\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x62\x74\x6E\x2D\x48\x48\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x42\x54\x4E\x2D\x48\x48\x2D\x42\x54\x4E","\x29\x20\x2E\x75\x73\x65\x72\x2D\x63\x61\x6E\x76\x61\x73\x2D\x42\x54\x4E\x2D\x48\x48\x2D\x42\x54\x4E","\x23\x74\x68\x69\x73\x49\x73\x52\x65\x66\x72\x65\x73\x68\x42\x54\x4E\x6D\x61\x69\x6E","\x31\x30\x30\x25","\x2E\x73\x70\x6C\x61\x73\x68\x2D\x73\x63\x72\x65\x65\x6E\x2D\x31"];var database;var drawing=[];var prevDrawing=[[]];var prevDrawingSequel=0;var currentPath=[];var isDrawing=false;var brushThickness=4;var canvasBackgroundColor=_0x4328[0];var strokeColor=_0x4328[1];var hA=$(_0x4328[3])[_0x4328[2]]();var wB=$(_0x4328[3])[_0x4328[4]]();var simpleSketch=function(_0x3aa3xd){var _0x3aa3xe=0;var _0x3aa3xf=100;_0x3aa3xd[_0x4328[5]]= function(){canvas2= _0x3aa3xd[_0x4328[6]](wB,hA);_0x3aa3xd[_0x4328[8]](_0x4328[7])};_0x3aa3xd[_0x4328[9]]= function(){_0x3aa3xd[_0x4328[8]](canvasBackgroundColor);_0x3aa3xd[_0x4328[10]](strokeColor);_0x3aa3xd[_0x4328[11]](brushThickness);_0x3aa3xd[_0x4328[12]]();for(var _0x3aa3x10=0;_0x3aa3x10< drawing[_0x4328[13]];_0x3aa3x10++){var _0x3aa3x11=drawing[_0x3aa3x10];_0x3aa3xd[_0x4328[14]]();try{for(var _0x3aa3x12=0;_0x3aa3x12< _0x3aa3x11[_0x4328[13]];_0x3aa3x12++){_0x3aa3xd[_0x4328[17]](_0x3aa3x11[_0x3aa3x12][_0x4328[15]],_0x3aa3x11[_0x3aa3x12][_0x4328[16]])}}catch(err){};_0x3aa3xd[_0x4328[18]]()}}};var previewCanvasRef= new p5(simpleSketch,_0x4328[19]);function setup(){let _0x3aa3x15=$(_0x4328[20])[_0x4328[2]]();let _0x3aa3x16=$(_0x4328[20])[_0x4328[4]]();canvas= createCanvas(_0x3aa3x16,_0x3aa3x15);stroke(strokeColor);canvas[_0x4328[21]](startPath);canvas[_0x4328[22]](startPath);canvas[_0x4328[24]](_0x4328[23]);canvas[_0x4328[25]](endPath);canvas[_0x4328[26]](endPath);var _0x3aa3x17=select(_0x4328[27]);_0x3aa3x17[_0x4328[21]](saveDrawing);var _0x3aa3x18=select(_0x4328[28]);_0x3aa3x18[_0x4328[21]](clearDrawing);var _0x3aa3x19={apiKey:_0x4328[29],authDomain:_0x4328[30],databaseURL:_0x4328[31],storageBucket:_0x4328[32],messagingSenderId:_0x4328[33]};firebase[_0x4328[34]](_0x3aa3x19);database= firebase[_0x4328[35]]();var _0x3aa3x1a=getURLParams();if(_0x3aa3x1a[_0x4328[36]]){showDrawing(_0x3aa3x1a[_0x4328[36]])};var _0x3aa3x1b=database[_0x4328[38]](_0x4328[37]);_0x3aa3x1b[_0x4328[40]](_0x4328[39],gotData,errData)}function startPath(){isDrawing= true;currentPath= [];drawing[_0x4328[41]](currentPath)}function endPath(){isDrawing= false}function draw(){background(canvasBackgroundColor);if(isDrawing){var _0x3aa3x1f={x:mouseX,y:mouseY};currentPath[_0x4328[41]](_0x3aa3x1f)};stroke(strokeColor);strokeWeight(brushThickness);noFill();for(var _0x3aa3x10=0;_0x3aa3x10< drawing[_0x4328[13]];_0x3aa3x10++){var _0x3aa3x11=drawing[_0x3aa3x10];beginShape();try{for(var _0x3aa3x12=0;_0x3aa3x12< _0x3aa3x11[_0x4328[13]];_0x3aa3x12++){vertex(_0x3aa3x11[_0x3aa3x12][_0x4328[15]],_0x3aa3x11[_0x3aa3x12][_0x4328[16]])}}catch(err){};endShape()}}function getDateString(){let _0x3aa3x21= new Date();let _0x3aa3x22=_0x3aa3x21[_0x4328[42]]();let _0x3aa3x23=_0x3aa3x21[_0x4328[43]]();let _0x3aa3x24;let _0x3aa3x25=_0x3aa3x21[_0x4328[44]]();if(_0x3aa3x23== 0){_0x3aa3x24= _0x4328[45]}else {if(_0x3aa3x23== 1){_0x3aa3x24= _0x4328[46]}else {if(_0x3aa3x23== 2){_0x3aa3x24= _0x4328[47]}else {if(_0x3aa3x23== 3){_0x3aa3x24= _0x4328[48]}else {if(_0x3aa3x23== 4){_0x3aa3x24= _0x4328[49]}else {if(_0x3aa3x23== 5){_0x3aa3x24= _0x4328[50]}else {if(_0x3aa3x23== 6){_0x3aa3x24= _0x4328[51]}else {if(_0x3aa3x23== 7){_0x3aa3x24= _0x4328[52]}else {if(_0x3aa3x23== 8){_0x3aa3x24= _0x4328[53]}else {if(_0x3aa3x23== 9){_0x3aa3x24= _0x4328[54]}else {if(_0x3aa3x23== 10){_0x3aa3x24= _0x4328[55]}else {if(_0x3aa3x23== 11){_0x3aa3x24= _0x4328[56]}}}}}}}}}}}};return _0x3aa3x22+ _0x4328[57]+ _0x3aa3x24+ _0x4328[57]+ _0x3aa3x25}var snapshotVal;var snapshotVal2;function saveDrawing(){let _0x3aa3x29=firebase[_0x4328[35]]();let _0x3aa3x2a=_0x3aa3x29[_0x4328[38]](_0x4328[37]);let _0x3aa3x2b=firebase[_0x4328[35]]();let _0x3aa3x2c=_0x3aa3x2b[_0x4328[38]](_0x4328[37]);let _0x3aa3x2d={name:$(_0x4328[59])[_0x4328[58]](),drawing:drawing,date:getDateString(),stroke:strokeColor,bg:canvasBackgroundColor,thickness:brushThickness};function _0x3aa3x2e(_0x3aa3x2f,_0x3aa3x30){}let _0x3aa3x31=_0x3aa3x2c[_0x4328[41]](_0x3aa3x2d,_0x3aa3x2e);_0x3aa3x2a[_0x4328[67]](_0x4328[39],function(_0x3aa3x32){snapshotVal= _0x3aa3x32[_0x4328[58]]();snapshotVal= Object[_0x4328[60]](snapshotVal);if(_0x3aa3x32[_0x4328[61]]()> 8){let _0x3aa3x33=_0x3aa3x32[_0x4328[61]]();let _0x3aa3x34=_0x3aa3x32[_0x4328[61]]()- 8;for(let _0x3aa3x10=0;_0x3aa3x10< _0x3aa3x34;_0x3aa3x10++){let _0x3aa3x35=firebase[_0x4328[35]]();let _0x3aa3x36=_0x3aa3x35[_0x4328[38]](_0x4328[37]);_0x3aa3x36[_0x4328[63]](snapshotVal[0])[_0x4328[62]]()}}},function(_0x3aa3x37){console[_0x4328[66]](_0x4328[64]+ _0x3aa3x37[_0x4328[65]])})}function gotData(_0x3aa3x2d){}function errData(_0x3aa3x2f){console[_0x4328[66]](_0x3aa3x2f)}function showDrawing(_0x3aa3x3b){if(_0x3aa3x3b instanceof  MouseEvent){_0x3aa3x3b= this[_0x4328[68]]()};var _0x3aa3x1b=database[_0x4328[38]](_0x4328[69]+ _0x3aa3x3b);_0x3aa3x1b[_0x4328[40]](_0x4328[39],_0x3aa3x3c,errData);function _0x3aa3x3c(_0x3aa3x2d){var _0x3aa3x3d=_0x3aa3x2d[_0x4328[58]]();drawing= _0x3aa3x3d[_0x4328[70]]}}function clearDrawing(){drawing= []}const pickr=Pickr[_0x4328[86]]({el:_0x4328[71],theme:_0x4328[72],swatches:[_0x4328[73],_0x4328[74],_0x4328[75],_0x4328[76],_0x4328[77],_0x4328[78],_0x4328[79],_0x4328[80],_0x4328[81],_0x4328[82],_0x4328[83],_0x4328[84],_0x4328[84],_0x4328[85]],components:{preview:true,opacity:false,hue:true,interaction:{hex:true,rgba:false,hsla:false,hsva:false,cmyk:false,input:false,clear:false,save:false}}});let stylesheetText=`${_0x4328[87]}`;var thickness;class customSlider extends HTMLElement{constructor(){super();this[_0x4328[39]]= parseFloat(this[_0x4328[88]](_0x4328[39]))|| 0;this[_0x4328[89]]= parseFloat(this[_0x4328[88]](_0x4328[89]))|| 0;this[_0x4328[90]]= parseFloat(this[_0x4328[88]](_0x4328[90]))|| 100;this[_0x4328[91]]= parseFloat(this[_0x4328[88]](_0x4328[91]))|| 1;this[_0x4328[93]][_0x4328[92]]= _0x4328[94];this[_0x4328[93]][_0x4328[95]]= _0x4328[96];this[_0x4328[93]][_0x4328[97]]= _0x4328[98];this[_0x4328[99]]= this[_0x4328[101]]({mode:_0x4328[100]});this[_0x4328[102]]= false;this[_0x4328[86]]();this[_0x4328[103]]()}create(){let _0x3aa3x44=document[_0x4328[105]](_0x4328[104]);let _0x3aa3x45=document[_0x4328[105]](_0x4328[106]);let _0x3aa3x46=document[_0x4328[105]](_0x4328[106]);let _0x3aa3x47=document[_0x4328[105]](_0x4328[106]);let _0x3aa3x48=document[_0x4328[105]](_0x4328[93]);_0x3aa3x48[_0x4328[107]]= stylesheetText;_0x3aa3x44[_0x4328[108]]= _0x4328[109];_0x3aa3x44[_0x4328[36]]= _0x4328[110];_0x3aa3x44[_0x4328[89]]= this[_0x4328[89]];_0x3aa3x44[_0x4328[90]]= this[_0x4328[90]];_0x3aa3x44[_0x4328[91]]= this[_0x4328[91]];_0x3aa3x44[_0x4328[39]]= this[_0x4328[39]];_0x3aa3x45[_0x4328[36]]= _0x4328[111];_0x3aa3x46[_0x4328[36]]= _0x4328[112];_0x3aa3x47[_0x4328[36]]= _0x4328[39];_0x3aa3x44[_0x4328[114]](_0x4328[104],this[_0x4328[103]][_0x4328[113]](this));_0x3aa3x45[_0x4328[115]](_0x3aa3x44);_0x3aa3x45[_0x4328[115]](_0x3aa3x47);_0x3aa3x45[_0x4328[115]](_0x3aa3x46);this[_0x4328[99]][_0x4328[115]](_0x3aa3x48);this[_0x4328[99]][_0x4328[115]](_0x3aa3x45)}update(){let _0x3aa3x4a=this[_0x4328[99]][_0x4328[116]](_0x4328[111]);let _0x3aa3x44=this[_0x4328[99]][_0x4328[116]](_0x4328[110]);let _0x3aa3x47=this[_0x4328[99]][_0x4328[116]](_0x4328[39]);let _0x3aa3x4b=_0x3aa3x44[_0x4328[39]]/ (this[_0x4328[90]]- this[_0x4328[89]]);_0x3aa3x47[_0x4328[117]]= _0x3aa3x44[_0x4328[39]];_0x3aa3x4a[_0x4328[93]][_0x4328[119]](_0x4328[118],_0x3aa3x4b);thickness= _0x3aa3x44[_0x4328[39]];brushThickness= thickness}};window[_0x4328[120]]= ()=>{customElements[_0x4328[122]](_0x4328[121],customSlider)};var currentColorMode=0;$(_0x4328[124])[_0x4328[123]](0);$(_0x4328[125])[_0x4328[123]](0);$(_0x4328[126])[_0x4328[123]](0);$(_0x4328[127])[_0x4328[123]](0);$(_0x4328[128])[_0x4328[123]](0);$(_0x4328[129])[_0x4328[123]](0);$(_0x4328[133])[_0x4328[123]](0)[_0x4328[132]]({"\x68\x65\x69\x67\x68\x74":_0x4328[130],"\x77\x69\x64\x74\x68":_0x4328[131]});$(_0x4328[136])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){$(this)[_0x4328[135]]({opacity:0},40,function(){$(this)[_0x4328[135]]({opacity:1})})});function showBasicHome(){currentColorMode= 0;$(_0x4328[138])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[139])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[140])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[142])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141]});$(_0x4328[143])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141]});$(_0x4328[145])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141],"\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64":_0x4328[144]});$(_0x4328[124])[_0x4328[123]](0);$(_0x4328[125])[_0x4328[123]](0);$(_0x4328[151])[_0x4328[149]](_0x4328[150])[_0x4328[149]](_0x4328[148])[_0x4328[147]](_0x4328[146]);$(_0x4328[154])[_0x4328[153]](300)[_0x4328[152]](200);$(_0x4328[156])[_0x4328[149]](_0x4328[155]);$(_0x4328[158])[_0x4328[149]](_0x4328[157]);$(_0x4328[127])[_0x4328[123]](100);$(_0x4328[128])[_0x4328[123]](100)}function showAboutScreen(){$(_0x4328[151])[_0x4328[149]](_0x4328[150])[_0x4328[149]](_0x4328[146])[_0x4328[147]](_0x4328[148]);$(_0x4328[154])[_0x4328[123]](100);$(_0x4328[125])[_0x4328[123]](0);$(_0x4328[124])[_0x4328[153]](300)[_0x4328[152]](300);$(_0x4328[156])[_0x4328[147]](_0x4328[155]);$(_0x4328[158])[_0x4328[147]](_0x4328[157])}function showCodeGallery(){$(_0x4328[151])[_0x4328[149]](_0x4328[150])[_0x4328[149]](_0x4328[146])[_0x4328[147]](_0x4328[148]);$(_0x4328[154])[_0x4328[123]](100);$(_0x4328[124])[_0x4328[123]](0);$(_0x4328[125])[_0x4328[153]](300)[_0x4328[152]](300);$(_0x4328[156])[_0x4328[147]](_0x4328[155]);$(_0x4328[158])[_0x4328[147]](_0x4328[157])}$(_0x4328[159])[_0x4328[67]](_0x4328[134],function(){showAboutScreen()});$(_0x4328[160])[_0x4328[67]](_0x4328[134],function(){showCodeGallery()});$(_0x4328[161])[_0x4328[67]](_0x4328[134],function(){clearDrawing()});$(_0x4328[162])[_0x4328[67]](_0x4328[134],function(){showBasicHome()});$(_0x4328[59])[_0x4328[165]](function(){var _0x3aa3x51=this;setTimeout(function(){_0x3aa3x51[_0x4328[163]]= _0x3aa3x51[_0x4328[164]]= 10000},0)});$(_0x4328[59])[_0x4328[171]](function(){$(_0x4328[59])[_0x4328[167]](_0x4328[166],true);$(_0x4328[151])[_0x4328[168]]();$(_0x4328[169])[_0x4328[168]]();$(_0x4328[170])[_0x4328[168]]()});$(_0x4328[173])[_0x4328[67]](_0x4328[134],function(){$(_0x4328[59])[_0x4328[172]](_0x4328[166]);$(_0x4328[59])[_0x4328[165]]()});var _originalSize=$(window)[_0x4328[4]]()+ $(window)[_0x4328[2]]();$(window)[_0x4328[177]](function(){if($(window)[_0x4328[4]]()+ $(window)[_0x4328[2]]()!= _originalSize){$(_0x4328[151])[_0x4328[174]]();$(_0x4328[169])[_0x4328[174]]();$(_0x4328[170])[_0x4328[174]]();$(_0x4328[175])[_0x4328[132]](_0x4328[97],_0x4328[98])}else {$(_0x4328[59])[_0x4328[167]](_0x4328[166],true);$(_0x4328[151])[_0x4328[168]]();$(_0x4328[169])[_0x4328[168]]();$(_0x4328[170])[_0x4328[168]]();$(_0x4328[175])[_0x4328[132]](_0x4328[97],_0x4328[176])}});$(_0x4328[126])[_0x4328[67]](_0x4328[134],function(){showBasicHome();$(_0x4328[126])[_0x4328[123]](100)});$(_0x4328[180])[_0x4328[67]](_0x4328[134],function(){$(_0x4328[138])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[139])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[140])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[142])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141]});$(_0x4328[143])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141]});$(_0x4328[145])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141],"\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64":_0x4328[144]});$(_0x4328[138])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[178]});$(_0x4328[142])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[179]});$(_0x4328[128])[_0x4328[123]](0);if(currentColorMode== 2|| currentColorMode== 4|| currentColorMode== 6){$(_0x4328[127])[_0x4328[123]](100)[_0x4328[153]](100)[_0x4328[152]](250)};currentColorMode= 2;$(_0x4328[151])[_0x4328[149]](_0x4328[148])[_0x4328[149]](_0x4328[146])[_0x4328[147]](_0x4328[150]);$(_0x4328[154])[_0x4328[123]](100);$(_0x4328[126])[_0x4328[152]](200);$(_0x4328[127])[_0x4328[153]](250)[_0x4328[152]](250)});$(_0x4328[181])[_0x4328[67]](_0x4328[134],function(){$(_0x4328[138])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[139])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[140])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[142])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141]});$(_0x4328[143])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141]});$(_0x4328[145])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141],"\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64":_0x4328[144]});$(_0x4328[139])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[178]});$(_0x4328[143])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[179]});$(_0x4328[128])[_0x4328[123]](0);if(currentColorMode== 2|| currentColorMode== 4){$(_0x4328[127])[_0x4328[123]](100)[_0x4328[153]](100)[_0x4328[152]](250)};currentColorMode= 4;$(_0x4328[151])[_0x4328[149]](_0x4328[148])[_0x4328[149]](_0x4328[146])[_0x4328[147]](_0x4328[150]);$(_0x4328[154])[_0x4328[123]](100);$(_0x4328[126])[_0x4328[152]](200);$(_0x4328[127])[_0x4328[153]](250)[_0x4328[152]](250)});$(_0x4328[182])[_0x4328[67]](_0x4328[134],function(){$(_0x4328[138])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[139])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[140])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[137]});$(_0x4328[142])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141]});$(_0x4328[143])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141]});$(_0x4328[145])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[141],"\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64":_0x4328[144]});$(_0x4328[140])[_0x4328[132]]({"\x63\x6F\x6C\x6F\x72":_0x4328[178]});$(_0x4328[145])[_0x4328[132]]({"\x62\x6F\x72\x64\x65\x72":_0x4328[179],"\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64":_0x4328[178]});$(_0x4328[127])[_0x4328[123]](0);currentColorMode= 6;$(_0x4328[151])[_0x4328[149]](_0x4328[148])[_0x4328[149]](_0x4328[146])[_0x4328[147]](_0x4328[150]);$(_0x4328[154])[_0x4328[123]](100);$(_0x4328[126])[_0x4328[152]](200);$(_0x4328[128])[_0x4328[153]](250)[_0x4328[152]](250)});$(_0x4328[193])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){if(currentColorMode== 2){strokeColor= $(this)[_0x4328[132]](_0x4328[183])};if(currentColorMode== 4){canvasBackgroundColor= $(this)[_0x4328[132]](_0x4328[183]);$(_0x4328[186])[_0x4328[132]](_0x4328[184],_0x4328[185]+ $(this)[_0x4328[132]](_0x4328[183]));$(_0x4328[186])[_0x4328[132]](_0x4328[183],$(this)[_0x4328[132]](_0x4328[183])[_0x4328[189]](_0x4328[190],_0x4328[191]+ _0x4328[192])[_0x4328[189]](_0x4328[187],_0x4328[188])[_0x4328[189]](_0x4328[187],_0x4328[188])[_0x4328[189]](_0x4328[187],_0x4328[188]))}});$(_0x4328[195])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){$(_0x4328[194])[_0x4328[134]]()});var colorcode=_0x4328[196];var finalCode=rgba2hex(colorcode);function rgba2hex(_0x3aa3x56){var _0x3aa3x57,_0x3aa3x58,_0x3aa3x59=_0x3aa3x56[_0x4328[189]](/\s/g,_0x4328[188])[_0x4328[197]](/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i),_0x3aa3x5a=(_0x3aa3x59&& _0x3aa3x59[4]|| _0x4328[188])[_0x4328[198]](),_0x3aa3x5b=_0x3aa3x59?(_0x3aa3x59[1]| 1<< 8).toString(16)[_0x4328[199]](1)+ (_0x3aa3x59[2]| 1<< 8).toString(16)[_0x4328[199]](1)+ (_0x3aa3x59[3]| 1<< 8).toString(16)[_0x4328[199]](1):_0x3aa3x56;if(_0x3aa3x5a!== _0x4328[188]){_0x3aa3x57= _0x3aa3x5a}else {_0x3aa3x57= 1};_0x3aa3x57= ((_0x3aa3x57* 255)| 1<< 8).toString(16)[_0x4328[199]](1);_0x3aa3x5b= _0x3aa3x5b+ _0x3aa3x57;return _0x3aa3x5b}function test(colorcode){console[_0x4328[66]](rgba2hex(colorcode))}pickr[_0x4328[67]](_0x4328[200],(_0x3aa3x5d)=>{if(currentColorMode== 2){strokeColor= _0x4328[201]+ rgba2hex(_0x3aa3x5d[_0x4328[202]]().toString(0))};if(currentColorMode== 4){canvasBackgroundColor= _0x4328[201]+ rgba2hex(_0x3aa3x5d[_0x4328[202]]().toString(0));$(_0x4328[186])[_0x4328[132]](_0x4328[184],_0x4328[185]+ _0x4328[201]+ rgba2hex(_0x3aa3x5d[_0x4328[202]]().toString(0)));$(_0x4328[186])[_0x4328[132]](_0x4328[183],rgba2hex(_0x3aa3x5d[_0x4328[202]]().toString(0))[_0x4328[189]](_0x4328[190],_0x4328[191]+ _0x4328[192])[_0x4328[189]](_0x4328[187],_0x4328[188])[_0x4328[189]](_0x4328[187],_0x4328[188])[_0x4328[189]](_0x4328[187],_0x4328[188]))}});pickr[_0x4328[67]](_0x4328[174],(_0x3aa3x5d)=>{$(_0x4328[203])[_0x4328[135]]({opacity:1})})[_0x4328[67]](_0x4328[168],(_0x3aa3x5e,_0x3aa3x5d)=>{$(_0x4328[203])[_0x4328[135]]({opacity:0.6})});$(_0x4328[207])[_0x4328[67]](_0x4328[134],function(){$(_0x4328[206])[_0x4328[149]](_0x4328[205])[_0x4328[147]](_0x4328[204]);setTimeout(function(){showBasicHome()},200)});$(_0x4328[208])[_0x4328[67]](_0x4328[134],function(){$(_0x4328[206])[_0x4328[149]](_0x4328[204])[_0x4328[147]](_0x4328[205])});$(_0x4328[59])[_0x4328[67]](_0x4328[209],function(){$(_0x4328[211])[_0x4328[210]]($(_0x4328[59])[_0x4328[58]]())});$(_0x4328[212])[_0x4328[67]](_0x4328[134],function(){$(_0x4328[206])[_0x4328[149]](_0x4328[204])[_0x4328[147]](_0x4328[205]);$(_0x4328[59])[_0x4328[172]](_0x4328[166]);$(_0x4328[59])[_0x4328[153]](200)[_0x4328[165]]();showBasicHome()});$(_0x4328[216])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){$(_0x4328[129])[_0x4328[123]](400);$(_0x4328[215])[_0x4328[132]](_0x4328[213],_0x4328[214])});var uploadedDrawing;$(_0x4328[222])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){if($(_0x4328[59])[_0x4328[58]]()== _0x4328[188]){$(_0x4328[206])[_0x4328[149]](_0x4328[204])[_0x4328[147]](_0x4328[205]);$(_0x4328[59])[_0x4328[172]](_0x4328[166]);$(_0x4328[59])[_0x4328[153]](200)[_0x4328[165]]()}else {if(uploadedDrawing== drawing){$(_0x4328[215])[_0x4328[132]](_0x4328[213],_0x4328[217]);$(_0x4328[129])[_0x4328[152]](400);$(_0x4328[218])[_0x4328[152]](0);$(_0x4328[219])[_0x4328[123]](0);$(_0x4328[220])[_0x4328[152]](0);$(_0x4328[221])[_0x4328[123]](0)}else {saveDrawing();$(_0x4328[215])[_0x4328[132]](_0x4328[213],_0x4328[217]);$(_0x4328[129])[_0x4328[152]](400);$(_0x4328[218])[_0x4328[123]](100);$(_0x4328[219])[_0x4328[153]](100)[_0x4328[152]](200);$(_0x4328[220])[_0x4328[123]](100);$(_0x4328[221])[_0x4328[153]](100)[_0x4328[152]](200);uploadedDrawing= drawing}}});$(_0x4328[225])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){if($(_0x4328[133])[_0x4328[2]]()== 0){$(_0x4328[133])[_0x4328[152]](40)[_0x4328[132]]({"\x68\x65\x69\x67\x68\x74":_0x4328[223],"\x77\x69\x64\x74\x68":_0x4328[224]})}else {$(_0x4328[133])[_0x4328[132]]({"\x68\x65\x69\x67\x68\x74":_0x4328[130],"\x77\x69\x64\x74\x68":_0x4328[131]})[_0x4328[153]](200)[_0x4328[174]](20)}});$(_0x4328[227])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){_0x3aa3x4d[_0x4328[226]]();$(_0x4328[133])[_0x4328[132]]({"\x68\x65\x69\x67\x68\x74":_0x4328[130],"\x77\x69\x64\x74\x68":_0x4328[131]})[_0x4328[153]](200)[_0x4328[174]](20)});$(_0x4328[228])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){_0x3aa3x4d[_0x4328[226]]();$(_0x4328[133])[_0x4328[132]]({"\x68\x65\x69\x67\x68\x74":_0x4328[130],"\x77\x69\x64\x74\x68":_0x4328[131]})[_0x4328[153]](200)[_0x4328[174]](20);clearDrawing()});$(_0x4328[229])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){_0x3aa3x4d[_0x4328[226]]();$(_0x4328[133])[_0x4328[132]]({"\x68\x65\x69\x67\x68\x74":_0x4328[130],"\x77\x69\x64\x74\x68":_0x4328[131]})[_0x4328[153]](200)[_0x4328[174]](20);showCodeGallery()});$(_0x4328[230])[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){showBasicHome()});$(_0x4328[233])[_0x4328[132]](_0x4328[231],_0x4328[232]);$(_0x4328[233])[_0x4328[238]](function(){if($(this)[_0x4328[234]]()== 0){$(_0x4328[236])[_0x4328[132]](_0x4328[231],_0x4328[235])}else {$(_0x4328[236])[_0x4328[132]](_0x4328[231],_0x4328[237])}});var hA8=$(_0x4328[239])[_0x4328[2]]();var wA8=$(_0x4328[239])[_0x4328[4]]();var simpleSketch2=function(_0x3aa3xd){let _0x3aa3x63=parseInt((_0x3aa3xd[_0x4328[241]])[_0x4328[240]](10,11))- 1;_0x3aa3xd[_0x4328[5]]= function(){canvas2= _0x3aa3xd[_0x4328[6]](wA8,300)};_0x3aa3xd[_0x4328[9]]= function(){_0x3aa3xd[_0x4328[8]](publicCanvasObj[_0x4328[242]+ _0x3aa3x63]);_0x3aa3xd[_0x4328[10]](publicCanvasObj[_0x4328[10]+ _0x3aa3x63]);_0x3aa3xd[_0x4328[11]](publicCanvasObj[_0x4328[243]+ _0x3aa3x63]);_0x3aa3xd[_0x4328[12]]();try{for(var _0x3aa3x10=0;_0x3aa3x10< publicCanvasObj[_0x4328[70]+ _0x3aa3x63][_0x4328[13]];_0x3aa3x10++){var _0x3aa3x11=publicCanvasObj[_0x4328[70]+ _0x3aa3x63][_0x3aa3x10];_0x3aa3xd[_0x4328[14]]();try{for(var _0x3aa3x12=0;_0x3aa3x12< _0x3aa3x11[_0x4328[13]];_0x3aa3x12++){_0x3aa3xd[_0x4328[17]](_0x3aa3x11[_0x3aa3x12][_0x4328[15]],_0x3aa3x11[_0x3aa3x12][_0x4328[16]])}}catch(e){};_0x3aa3xd[_0x4328[18]]()}}catch(err){}}};var gD;var gD2;var snapshotVal8;var publicCanvasObj={};var colorList=[_0x4328[244],_0x4328[245],_0x4328[246],_0x4328[247],_0x4328[248],_0x4328[249],_0x4328[250],_0x4328[251],_0x4328[252],_0x4328[253],_0x4328[254],_0x4328[255]];$(_0x4328[256])[_0x4328[152]](0);$(_0x4328[233])[_0x4328[123]](0);function showPublicCanvas(){$(_0x4328[233])[_0x4328[123]](400);$(_0x4328[256])[_0x4328[153]](400)[_0x4328[152]](400);$(function(){var _0x3aa3x1b=database[_0x4328[38]](_0x4328[37]);_0x3aa3x1b[_0x4328[40]](_0x4328[39],function(_0x3aa3x2d){var gotData=_0x3aa3x2d[_0x4328[58]]();var _0x3aa3x6a=Object[_0x4328[60]](gotData);gD= _0x3aa3x6a;gD2= _0x3aa3x2d[_0x4328[58]]();for(let _0x3aa3x10=0;_0x3aa3x10< 8;_0x3aa3x10++){publicCanvasObj[_0x4328[257]+ _0x3aa3x10]= gD2[gD[_0x3aa3x10]][_0x4328[257]];publicCanvasObj[_0x4328[70]+ _0x3aa3x10]= gD2[gD[_0x3aa3x10]][_0x4328[70]];publicCanvasObj[_0x4328[258]+ _0x3aa3x10]= gD2[gD[_0x3aa3x10]][_0x4328[258]];publicCanvasObj[_0x4328[10]+ _0x3aa3x10]= gD2[gD[_0x3aa3x10]][_0x4328[10]];publicCanvasObj[_0x4328[242]+ _0x3aa3x10]= gD2[gD[_0x3aa3x10]][_0x4328[242]];publicCanvasObj[_0x4328[243]+ _0x3aa3x10]= gD2[gD[_0x3aa3x10]][_0x4328[243]];var _0x3aa3x6b= new p5(simpleSketch2,_0x4328[259]+ (_0x3aa3x10+ 1));$(`${_0x4328[260]}${_0x3aa3x10+ 1}${_0x4328[261]}`)[_0x4328[210]](publicCanvasObj[_0x4328[257]+ _0x3aa3x10]);$(`${_0x4328[260]}${_0x3aa3x10+ 1}${_0x4328[262]}`)[_0x4328[210]](publicCanvasObj[_0x4328[258]+ _0x3aa3x10]);$(`${_0x4328[260]}${_0x3aa3x10+ 1}${_0x4328[263]}`)[_0x4328[210]]((publicCanvasObj[_0x4328[257]+ _0x3aa3x10])[_0x4328[240]](0,1));$(`${_0x4328[260]}${_0x3aa3x10+ 1}${_0x4328[263]}`)[_0x4328[132]]({"\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64":colorList[Math[_0x4328[265]](Math[_0x4328[264]]()* colorList[_0x4328[13]])]});$(`${_0x4328[266]}${_0x3aa3x10+ 1}${_0x4328[267]}`)[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){console[_0x4328[66]](publicCanvasObj[_0x4328[70]+ _0x3aa3x10]);drawing= publicCanvasObj[_0x4328[70]+ _0x3aa3x10]});$(`${_0x4328[260]}${_0x3aa3x10+ 1}${_0x4328[268]}`)[_0x4328[67]](_0x4328[134],function(_0x3aa3x4d){drawing= publicCanvasObj[_0x4328[70]+ _0x3aa3x10];canvasBackgroundColor= publicCanvasObj[_0x4328[242]+ _0x3aa3x10];strokeColor= publicCanvasObj[_0x4328[10]+ _0x3aa3x10];brushThickness= publicCanvasObj[_0x4328[243]+ _0x3aa3x10];showBasicHome()})};$(_0x4328[256])[_0x4328[123]](400);setTimeout(function(){$(_0x4328[233])[_0x4328[152]](400)},600)},function(_0x3aa3x2f){console[_0x4328[66]](_0x3aa3x2f)})})}$(_0x4328[269])[_0x4328[67]](_0x4328[134],function(){showPublicCanvas()});$(function(){setTimeout(function(){showPublicCanvas()},3000)});setTimeout(function(){$(_0x4328[271])[_0x4328[132]]({"\x6C\x65\x66\x74":_0x4328[270]})},2600)
+    </script>
+    <!-- Ripple.js Library (A little modified) -->
+    <script>
+    var ripple=function(){function rippleStart(e){rippleContainer=getRippleContainer(e.target),("0"==rippleContainer.getAttribute("animating")||!rippleContainer.hasAttribute("animating"))&&e.target.className.indexOf("ripple")>-1&&(rippleContainer.setAttribute("animating","1"),offsetX="number"==typeof e.offsetX?e.offsetX:e.touches[0].clientX-e.target.getBoundingClientRect().left,offsetY="number"==typeof e.offsetY?e.offsetY:e.touches[0].clientY-e.target.getBoundingClientRect().top,fullCoverRadius=Math.max(Math.sqrt(Math.pow(offsetX,2)+Math.pow(offsetY,2)),Math.sqrt(Math.pow(e.target.clientWidth-offsetX,2)+Math.pow(e.target.clientHeight-offsetY,2)),Math.sqrt(Math.pow(offsetX,2)+Math.pow(e.target.clientHeight-offsetY,2)),Math.sqrt(Math.pow(offsetY,2)+Math.pow(e.target.clientWidth-offsetX,2))),expandTime=e.target.getAttribute("ripple-press-expand-time")||3,rippleContainer.style.transition="transform "+expandTime+"s ease-out, box-shadow 0.1s linear",rippleContainer.style.background=e.target.getAttribute("ripple-color")||"white",rippleContainer.style.opacity=e.target.getAttribute("ripple-opacity")||"0.6",rippleContainer.style.boxShadow=e.target.getAttribute("ripple-shadow")||"none",rippleContainer.style.top=offsetY+"px",rippleContainer.style.left=offsetX+"px",rippleContainer.style.transform="translate(-50%, -50%) scale("+fullCoverRadius/100+")")}function rippleEnd(e){rippleContainer=getRippleContainer(e.target),"1"==rippleContainer.getAttribute("animating")&&(rippleContainer.setAttribute("animating","2"),backgroundA=window.getComputedStyle(rippleContainer,null).getPropertyValue("background"),destinationRadius=e.target.clientWidth+e.target.clientHeight,rippleContainer.style.transition="none",expandTime=e.target.getAttribute("ripple-release-expand-time")||.4,rippleContainer.style.transition="transform "+expandTime+"s linear, backgroundA "+expandTime+"s linear, opacity "+expandTime+"s ease-in-out",rippleContainer.style.transform="translate(-50%, -50%) scale("+destinationRadius/100+")",rippleContainer.style.background="radial-gradient(transparent 10%, "+backgroundA+" 40%)",rippleContainer.style.opacity="0",e.target.dispatchEvent(new CustomEvent("ripple-button-click",{target:e.target})),eval(e.target.getAttribute("onrippleclick")))}function rippleRetrieve(e){rippleContainer=getRippleContainer(e.target),"translate(-50%, -50%) scale(0)"==rippleContainer.style.transform&&rippleContainer.setAttribute("animating","0"),"1"==rippleContainer.getAttribute("animating")&&(rippleContainer.setAttribute("animating","3"),collapseTime=e.target.getAttribute("ripple-leave-collapse-time")||.4,rippleContainer.style.transition="transform "+collapseTime+"s linear, box-shadow "+collapseTime+"s linear",rippleContainer.style.boxShadow="none",rippleContainer.style.transform="translate(-50%, -50%) scale(0)")}function getRippleContainer(e){for(childs=e.childNodes,ii=0;ii<childs.length;ii++)try{if(childs[ii].className.indexOf("rippleContainer")>-1)return childs[ii]}catch(t){}return e}window.addEventListener("load",function(){css=document.createElement("style"),css.type="text/css",css.innerHTML=".ripple { overflow: hidden !important; position: relative; } .ripple .rippleContainer { display: block; height: 200px !important; width: 200px !important; padding: 0px 0px 0px 0px; border-radius: 50%; position: absolute !important; top: 0px; left: 0px; transform: translate(-50%, -50%) scale(0); -webkit-transform: translate(-50%, -50%) scale(0); -ms-transform: translate(-50%, -50%) scale(0); background-color: transparent; }  .ripple * {pointer-events: none !important;}",document.head.appendChild(css),ripple.registerRipples()});var ripple={registerRipples:function(){for(rippleButtons=document.getElementsByClassName("ripple"),i=0;i<rippleButtons.length;i++)rippleButtons[i].addEventListener("touchstart",function(e){rippleStart(e)},{passive:!0}),rippleButtons[i].addEventListener("touchmove",function(e){if(e.target.hasAttribute("ripple-cancel-on-move"))return void rippleRetrieve(e);try{overEl=document.elementFromPoint(e.touches[0].clientX,e.touches[0].clientY).className.indexOf("ripple")>=0}catch(t){overEl=!1}overEl||rippleRetrieve(e)},{passive:!0}),rippleButtons[i].addEventListener("touchend",function(e){rippleEnd(e)},{passive:!0}),rippleButtons[i].addEventListener("mousedown",function(e){rippleStart(e)},{passive:!0}),rippleButtons[i].addEventListener("mouseup",function(e){rippleEnd(e)},{passive:!0}),rippleButtons[i].addEventListener("mousemove",function(e){!e.target.hasAttribute("ripple-cancel-on-move")||0==e.movementX&&0==e.movementY||rippleRetrieve(e)},{passive:!0}),rippleButtons[i].addEventListener("mouseleave",function(e){rippleRetrieve(e)},{passive:!0}),rippleButtons[i].addEventListener("transitionend",function(e){("2"==e.target.getAttribute("animating")||"3"==e.target.getAttribute("animating"))&&(e.target.style.transition="none",e.target.style.transform="translate(-50%, -50%) scale(0)",e.target.style.boxShadow="none",e.target.setAttribute("animating","0"))},{passive:!0}),getRippleContainer(rippleButtons[i])==rippleButtons[i]&&(rippleButtons[i].innerHTML+='<div class="rippleContainer"></div>')},ripple:function(t){t.className.indexOf("ripple")<0||(rect=t.getBoundingClientRect(),e={target:t,offsetX:rect.width/2,offsetY:rect.height/2},rippleStart(e),rippleEnd(e))}};return ripple}();
+    </script>
 </body>
 </html>
