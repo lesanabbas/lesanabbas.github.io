@@ -1,13 +1,48 @@
 <html>
     <head>
         <title>Index</title>
-    </head>
-    <body>
-        <button onclick="myfun()">Next Page</button>
         <script>
             function myfun() {
                 location.replace("second.html")
             }
         </script>
+        <style>
+            .btn {
+                width: 100px;
+                height: 60px;
+                margin-left: 550px;
+                margin-top: 100px;
+                border-top-left-radius: 30%;
+                border-top-right-radius: 30%;
+                border-bottom-left-radius: 30%;
+                border-bottom-right-radius: 30%;
+            }
+            #div1 {
+                width: 7%;
+                height: 100px;
+                margin: 50px auto;
+                background: linear-gradient(rgba(214, 201, 13, 0.726),rgba(21, 163, 21, 0.8),rgba(61, 27, 216, 0.8));
+            }
+            #div1:hover {
+                transform: scale(1.2);
+                transform: skew(45deg);
+            }
+            button:hover {
+                transform: skewY(-45deg);
+            }
+            .container {
+                width: 100px;
+                height: 100px;
+                background: transparent;
+                margin: 50px auto;
+                border-radius: 50%;
+                box-shadow: 25px 10px 0 0 white;
+            }
+        </style>
+    </head>
+    <body style="background-color: black;">
+        <button class="btn" onclick="myfun()">Next Page</button>
+        <div id="div1"></div>
+        <div class="container"></div>
     </body>
 </html>

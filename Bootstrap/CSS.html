@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Cascading Style Sheets</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        /* Dark Mode CSS */
+        body hr {
+            padding: 0px;
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: rgb(52, 58, 64);
+            ;
+            color: white;
+        }
+
+        /* Table CSS  */
+        table {
+            border: 1px solid rgb(40, 167, 69);
+            /* border-collapse: collapse; */
+            width: 100%;
+        }
+
+        .head {
+            border: 1px solid rgb(40, 167, 69);
+            text-align: center;
+        }
+
+        .contains {
+            border: 1px solid rgb(40, 167, 69);
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">The Crazy Programmer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Topic
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="HTML5.html">HTML5</a>
+                        <a class="dropdown-item" href="CSS.html">CSS</a>
+                        <a class="dropdown-item" href="#">JavaScript</a>
+                        <a class="dropdown-item" href="#">Java</a>
+                        <a class="dropdown-item" href="#">Python<span class="badge badge-success ml-2">New</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Support Us</a>
+                        <a class="dropdown-item" href="#">Write With Us</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn btn-outline-success">Search</button>
+            </form>
+            <form class="form-inline ml-2">
+                <label class="switch">
+                    <input type="checkbox" onclick="myFunction()">
+                    <span class="slider round"></span>
+                </label>
+            </form>
+        </div>
+    </nav>
+
+    <div class="row">
+        <nav id="navbar-example3" class="navbar navbar-dark bg-dark">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <nav class="nav nav-pills flex-column">
+                <h4 style="color: whitesmoke;">Cascading Style Sheets</h4>
+                <a class="nav-link" href="#item-1">Introduction</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3 my-1" href="#item-1-1">Colors</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-2">Containers</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-3">Border</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-4">Cards</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-5">Fonts</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-6">Google Fonts</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-7">Text</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-8">Round</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-9">Padding & Margin</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-10">Buttons</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-11">Alert</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-12">Tables</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-13">Lists</a>
+                    <a class="nav-link ml-3 my-1" href="#item-1-14">Images</a>
+                </nav>
+                <!-- <a class="nav-link" href="#item-2">Item2</a> -->
+                <a class="nav-link" href="#item-2">Examples</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3 my-1" href="#item-2-1">CSS Demo</a>
+                    <a class="nav-link ml-3 my-1" href="#item-2-2">CSS Example</a>
+                </nav>
+            </nav>
+        </nav>
+
+        <div style="height: 720px; overflow-y: scroll; padding: 20px;" data-spy="scroll" data-target="#navbar-example3"
+            data-offset="0" class="col">
+            <h4 id="item-1">Introduction</h4>
+            <hr style="border-top: 4px solid rgb(40, 167, 69);">
+            <p><a href="https://www.google.com/search?q=CSS&oq=CSS&aqs=chrome..69i57j69i59l3j69i60j69i65l3.4260j0j7&sourceid=chrome&ie=UTF-8"
+                    target="_blank">CSS</a>
+                (Cascading Style Sheets) is used to style and lay out web pages — for example, to alter the font,
+                color, size, and spacing of your content, split it into multiple columns, or add animations and other
+                decorative features. This module provides a gentle beginning to your path towards CSS mastery with the
+                basics of how it works, what the syntax looks like, and how you can start using it to add styling to
+                HTML.</p>
+            <h5>Let's start with CSS</h5>
+            <p>In this tutorial we will take a simple HTML document and apply CSS to it, learning some practical things
+                about the language along the way.</p>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h5 id="item-1-1">Colors</h5>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <table>
+                <tr>
+                    <th class="head">Keyword</th>
+                    <th class="head">RGB hex value</th>
+                    <th class="head">Live keyword</th>
+                </tr>
+                <tr>
+                    <td class="contains">black</td>
+                    <td class="contains"></td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">silver</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">gray</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">while</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">maroon</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">red</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">purple</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">fuchsia</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">green</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">line</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">olive</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">yellow</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">navy</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">blue</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">teal</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">firebrick</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">floralwhite</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">forestgreen</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">gainsboro</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">ghostwhite</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">gold</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">goldenrod</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">greenyellow</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">grey</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">honeydew</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">hotpink</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+                <tr>
+                    <td class="contains">indianred</td>
+                    <td class="contains">3</td>
+                    <td class="contains">4</td>
+                </tr>
+            </table>
+            <h5 id="item-1-2">Containers</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+            <h4 id="item-1-3">Border</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+            <h4 id="item-1-4">Cards</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-5">Fonts</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-6">Google Fonts</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-7">Text</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-8">Round</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-9">Padding & Margin</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-10">Buttons</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-11">Alert</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-12">Tables</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-13">Lists</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-1-14">Images</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-2">Examples</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-2-1">CSS Demo</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+
+            <h5 id="item-2-2">CSS Examples</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
+                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
+                totam?</p>
+        </div>
+    </div>
+
+    <!-- Dark mode -->
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
