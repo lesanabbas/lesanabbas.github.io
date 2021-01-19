@@ -101,6 +101,15 @@
             border: 1px solid rgb(40, 167, 69);
             text-align: center;
         }
+
+        /* div style */
+        .container1 {
+            margin-left: 30px;
+        }
+        .container {
+            border: 1px solid black;
+            background-color: rgb(52, 58, 64);
+        }
     </style>
 
 </head>
@@ -163,7 +172,12 @@
                 <a class="nav-link" href="#item-1">Introduction</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link ml-3 my-1" href="#item-1-1">Colors</a>
-                    <a class="nav-link ml-3 my-1" href="#item-1-2">Containers</a>
+                    <!-- <a class="nav-link ml-3 my-1" href="#item-1-2">Containers</a> -->
+                    <a class="nav-link" href="#item-2">Selector</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#item-2-1">Class</a>
+                        <a class="nav-link ml-3 my-1" href="#item-2-2">Id</a>
+                    </nav>
                     <a class="nav-link ml-3 my-1" href="#item-1-3">Border</a>
                     <a class="nav-link ml-3 my-1" href="#item-1-4">Cards</a>
                     <a class="nav-link ml-3 my-1" href="#item-1-5">Fonts</a>
@@ -178,17 +192,17 @@
                     <a class="nav-link ml-3 my-1" href="#item-1-14">Images</a>
                 </nav>
                 <!-- <a class="nav-link" href="#item-2">Item2</a> -->
-                <a class="nav-link" href="#item-2">Examples</a>
+                <a class="nav-link" href="#item-3">Examples</a>
                 <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3 my-1" href="#item-2-1">CSS Demo</a>
-                    <a class="nav-link ml-3 my-1" href="#item-2-2">CSS Example</a>
+                    <a class="nav-link ml-3 my-1" href="#item-3-1">CSS Demo</a>
+                    <a class="nav-link ml-3 my-1" href="#item-3-2">CSS Example</a>
                 </nav>
             </nav>
         </nav>
 
-        <div style="height: 720px; overflow-y: scroll; padding: 20px;" data-spy="scroll" data-target="#navbar-example3"
+        <div style="height: 890px; overflow-y: scroll; padding: 20px;" data-spy="scroll" data-target="#navbar-example3"
             data-offset="0" class="col">
-            <h4 id="item-1">Introduction</h4>
+            <h2 id="item-1">Introduction</h2>
             <hr style="border-top: 4px solid rgb(40, 167, 69);">
             <p><a href="https://www.google.com/search?q=CSS&oq=CSS&aqs=chrome..69i57j69i59l3j69i60j69i65l3.4260j0j7&sourceid=chrome&ie=UTF-8"
                     target="_blank">CSS</a>
@@ -201,7 +215,7 @@
             <p>In this tutorial we will take a simple HTML document and apply CSS to it, learning some practical things
                 about the language along the way.</p>
             <hr style="border-top: 1px solid rgb(40, 167, 69);">
-            <h5 id="item-1-1">Colors</h5>
+            <h3 id="item-1-1">Colors</h3>
             <hr style="border-top: 1px solid rgb(40, 167, 69);">
             <table>
                 <tr>
@@ -212,143 +226,227 @@
                 <tr>
                     <td class="contains">black</td>
                     <td class="contains">#000000</td>
-                    <td style="background-color: #000000;" class="contains">4</td>
+                    <td style="background-color: #000000;" class="contains"></td>
                 </tr>
                 <tr>
                     <td class="contains">silver</td>
                     <td class="contains">#c0c0c0</td>
-                    <td style="background-color: #c0c0c0;" class="contains">4</td>
+                    <td style="background-color: #c0c0c0;" class="contains"></td>
                 </tr>
                 <tr>
                     <td class="contains">gray</td>
                     <td class="contains">#808080</td>
-                    <td style="background-color: #808080;" class="contains">4</td>
+                    <td style="background-color: #808080;" class="contains"></td>
                 </tr>
                 <tr>
                     <td class="contains">while</td>
                     <td class="contains">#ffffff</td>
-                    <td style="background-color: #ffffff;" class="contains">4</td>
+                    <td style="background-color: #ffffff;" class="contains"></td>
                 </tr>
                 <tr>
                     <td class="contains">maroon</td>
                     <td class="contains">#800000</td>
-                    <td style="background-color: #800000;" class="contains">4</td>
+                    <td style="background-color: #800000;" class="contains"></td>
                 </tr>
                 <tr>
                     <td class="contains">red</td>
                     <td class="contains">#ff0000</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #ff0000;" class="contains"></td>
                 </tr>
                 <tr>
                     <td class="contains">purple</td>
                     <td class="contains">#800080</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #800080;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">fuchsia</td>
                     <td class="contains">#ff00ff</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #ff00ff;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">green</td>
                     <td class="contains">#008000</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #008000;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">line</td>
                     <td class="contains">#00ff00</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #00ff00;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">olive</td>
                     <td class="contains">#808000</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #808000;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">yellow</td>
                     <td class="contains">#ffff00</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #800080;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">navy</td>
                     <td class="contains">#000080</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #000080;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">blue</td>
                     <td class="contains">#0000ff</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #0000ff;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">teal</td>
                     <td class="contains">#008080</td>
-                    <td class="contains">4</td>
+                    <td style="background-color: #008080;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">firebrick</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#b22222</td>
+                    <td style="background-color: #b22222;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">floralwhite</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#fffaf0</td>
+                    <td style="background-color: #fffaf0;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">forestgreen</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#228b22</td>
+                    <td style="background-color: #228b22;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">gainsboro</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#dcdcdc</td>
+                    <td style="background-color: #dcdcdc;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">ghostwhite</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#f8f8ff</td>
+                    <td style="background-color: #f8f8ff;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">gold</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#ffd700</td>
+                    <td style="background-color: #ffd700;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">goldenrod</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#daa520</td>
+                    <td style="background-color: #daa520;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">greenyellow</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#adff2f</td>
+                    <td style="background-color: #adff2f;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">grey</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#808080</td>
+                    <td style="background-color: #808080;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">honeydew</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#f0fff0</td>
+                    <td style="background-color: #f0fff0;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">hotpink</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#ff69b4</td>
+                    <td style="background-color: #ff69b4;" class="contains">4</td>
                 </tr>
                 <tr>
                     <td class="contains">indianred</td>
-                    <td class="contains">3</td>
-                    <td class="contains">4</td>
+                    <td class="contains">#cd5c5c</td>
+                    <td style="background-color: #cd5c5c;" class="contains">4</td>
                 </tr>
             </table>
-            <h5 id="item-1-2">Containers</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-2">Selector</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h4 id="item-2-1">Class:</h4>
+            <h4>Definition:</h4>
+            <div class="container1">
+                <p>The <code><i>.class</i></code> selector selects elements with a specific class attribute.</p>
+                <p>To select elements with a specific class, write a period (.) character, followed by the name of the
+                    class.</p>
+                <p>You can also specify that only specific HTML elements should be affected by a class. To do this,
+                    start
+                    with the element name, then<br>You can also specify that only specific HTML elements should be
+                    affected
+                    by a class. To do this, start with the element name, then</p>
+            </div>
+            <h4>Example:</h4><br>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&lt;title&gt;Page Title&lt;/title&gt;</p>
+                <p>&lt;style&gt;</p>
+                <p>&nbsp; &nbsp; .heading {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; font-size: 18px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; font-family: Apple Chancery, cursive;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; color: blue;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h1 class=&quot;heading&quot;&gt;Hello HTML and CSS&lt;/h1&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h1 class=&quot;heading&quot;&gt;Hello HTML and CSS&lt;/h1&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h1 class=&quot;heading&quot;&gt;Hello HTML and CSS&lt;/h1&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h1 class=&quot;heading&quot;&gt;Hello HTML and CSS&lt;/h1&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <h4 id="item-2-2">Id:</h4>
+            <h4>Definition:</h4>
+            <div class="container1">
+                <p>The <code><i>#id</i></code> selector selects elements with a specific class attribute.</p>
+                <p>To select elements with a specific class, write a period (.) character, followed by the name of the
+                    class.</p>
+                <p>You can also specify that only specific HTML elements should be affected by a class. To do this,
+                    start
+                    with the element name, then<br>You can also specify that only specific HTML elements should be
+                    affected
+                    by a class. To do this, start with the element name, then</p>
+            </div>
+            <h4>Example:</h4><br>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&lt;title&gt;Page Title&lt;/title&gt;</p>
+                <p>&lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #heading1 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 14px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: Apple Chancery, cursive;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: blue;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #heading2 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 18px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: &apos;Courier New&apos;, Courier, monospace;
+                </p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: blueviolet;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #heading3 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 20px;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: Arial, Helvetica, sans-serif;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: rosybrown;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #heading4 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 22px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: &apos;Courier New&apos;, Courier, monospace;
+                </p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: violet;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h1 id=&quot;heading1&quot;&gt;Hello HTML and CSS&lt;/h1&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h1 id=&quot;heading2&quot;&gt;Hello HTML and CSS&lt;/h1&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h1 id=&quot;heading3&quot;&gt;Hello HTML and CSS&lt;/h1&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h1 id=&quot;heading4&quot;&gt;Hello HTML and CSS&lt;/h1&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
             <h4 id="item-1-3">Border</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
                 ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
