@@ -110,6 +110,7 @@
         .container {
             border: 4px solid burlywood;
             background-color: rgb(52, 58, 64);
+            padding-top: 20px;
         }
     </style>
 
@@ -174,7 +175,7 @@
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link ml-3 my-1" href="#item-1-1">Colors</a>
                     <!-- <a class="nav-link ml-3 my-1" href="#item-1-2">Containers</a> -->
-                    <a class="nav-link" href="#item-2">Selector</a>
+                    <a class="nav-link ml-3 my-1" href="#item-2">Selector</a>
                     <nav class="nav nav-pills flex-column">
                         <a class="nav-link ml-3 my-1" href="#item-2-1">Class</a>
                         <a class="nav-link ml-3 my-1" href="#item-2-2">Id</a>
@@ -192,12 +193,12 @@
                     <a class="nav-link ml-3 my-1" href="#item-1-13">Lists</a>
                     <a class="nav-link ml-3 my-1" href="#item-1-14">Images</a>
                 </nav>
-                <!-- <a class="nav-link" href="#item-2">Item2</a> -->
+                <!-- <a class="nav-link" href="#item-2">Item2</a>
                 <a class="nav-link" href="#item-3">Examples</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link ml-3 my-1" href="#item-3-1">CSS Demo</a>
                     <a class="nav-link ml-3 my-1" href="#item-3-2">CSS Example</a>
-                </nav>
+                </nav> -->
             </nav>
         </nav>
 
@@ -451,6 +452,7 @@
                 <p>&lt;/html&gt;</p>
             </div><br>
             <button type="button" onclick="editer()" class="btn btn-success">Editer</button>
+
             <hr style="border-top: 1px solid rgb(40, 167, 69);">
             <h3 id="item-1-3">Border</h3>
             <hr style="border-top: 1px solid rgb(40, 167, 69);">
@@ -458,76 +460,632 @@
                 <p>The CSS <code class="w3-codespan">border</code> properties allow you to specify the style, width, and
                     color of an element's border.</p>
             </div>
+            <h4>Example:</h4><br>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #one {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-top: 1px solid black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #two {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-right: 1px solid black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #three {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-bottom: 1px solid black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #four {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-left: 1px solid black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #full {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 1px solid black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h2 id=&quot;one&quot;&gt;This is heading&lt;/h2&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h2 id=&quot;two&quot;&gt;This is heading&lt;/h2&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h2 id=&quot;three&quot;&gt;This is heading&lt;/h2&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h2 id=&quot;four&quot;&gt;This is heading&lt;/h2&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h2 id=&quot;full&quot;&gt;This is heading&lt;/h2&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button>
+            <h4>Example:</h4><br>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #Solid {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-style: solid;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #Double {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-style: double;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #Groove {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-style: groove;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #Dotted {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-style: dotted;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #Dashed {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-style: dashed;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #Hidden {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-style: hidden;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #Mixed {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-style: solid double dotted groove;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p>&nbsp; &nbsp; &lt;p id=&quot;Solid&quot;&gt;Solid Border&lt;/p&gt;</p>
+                <p>&nbsp; &nbsp; &lt;p id=&quot;Double&quot;&gt;Double Border&lt;/p&gt;</p>
+                <p>&nbsp; &nbsp; &lt;p id=&quot;Groove&quot;&gt;Groove Border&lt;/p&gt;</p>
+                <p>&nbsp; &nbsp; &lt;p id=&quot;Dotted&quot;&gt;Dotted Border&lt;/p&gt;</p>
+                <p>&nbsp; &nbsp; &lt;p id=&quot;Dashed&quot;&gt;Dashed Border&lt;/p&gt;</p>
+                <p>&nbsp; &nbsp; &lt;p id=&quot;Hidden&quot;&gt;Hidden Border&lt;/p&gt;</p>
+                <p>&nbsp; &nbsp; &lt;p id =&quot;Mixed&quot;&gt;Mixed Border&lt;/p&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button>
 
-            <h4 id="item-1-4">Cards</h4>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-4">Cards</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h4>Example:</h4><br>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p><br></p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                    initial-scale=1&quot;&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .card {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition: 0.3s;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 40%;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 5px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .card:hover {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; img {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 5px 5px 0 0;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .container {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 2px 16px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p><br></p>
+                <p>&lt;body&gt;</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &lt;h2&gt;Card&lt;/h2&gt;</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &lt;div class=&quot;card&quot;&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;img
+                    src=&quot;https://cdn.gamesaints.com/c/ga/cover/4f/iron-man-star-war/iron-man-star-war.jpg?v=1426131631&quot;
+                    alt=&quot;Avatar&quot; style=&quot;width:100%&quot;&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;container&quot;&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h4&gt;&lt;b&gt;Iron Man 2&lt;/b&gt;&lt;/h4&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;2010&lt;/p&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</p>
+                <p>&nbsp; &nbsp; &lt;/div&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button>
+
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-5">Fonts</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h2>Generic Font Families</h2>
+            <p>In CSS there are five generic font families:</p>
+            <div class="container1">
+                <ol>
+                    <li><strong>Serif</strong> fonts have a small stroke at the edges of each letter. They create a
+                        sense of formality and elegance.</li>
+                    <li><strong>Sans-serif</strong> fonts have clean lines (no small strokes attached). They create a
+                        modern and minimalistic look.</li>
+                    <li><strong>Monospace</strong> fonts - here all the letters have the same fixed width. They create a
+                        mechanical look.&nbsp;</li>
+                    <li><strong>Cursive</strong> fonts imitate human handwriting.</li>
+                    <li><strong>Fantasy</strong> fonts are decorative/playful fonts.</li>
+                </ol>
+            </div>
+            <p>All the different font names belong to one of the generic font families.&nbsp;</p>
+            <h2>Some Font Examples:</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>S.no</th>
+                        <th>Generic Font Family</th>
+                        <th>Examples of Font Names</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Serif</td>
+                        <td>
+                            <p style="font-size:150%;font-family:'Times New Roman',serif">Times New Roman</p><br>
+                            <p style="font-size:150%;font-family:Georgia,serif">Georgia</p><br>
+                            <p style="font-size:150%;font-family:Garamond,serif">Garamond</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Sans-serif</td>
+                        <td>
+                            <p style="font-size:150%;font-family:Arial,sans-serif">Arial</p>
+                            <p style="font-size:150%;font-family:Verdana,sans-serif">Verdana</p>
+                            <p style="font-size:150%;font-family:Verdana,sans-serif">Helvetica</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Monospace</td>
+                        <td>
+                            <p style="font-size:150%;font-family:'Courier New',monospace">Courier New</p>
+                            <p style="font-size:150%;font-family:'Lucida Console',monospace">Lucida Console</p>
+                            <p style="font-size:150%;font-family:Monaco,monospace">Monaco</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Cursive</td>
+                        <td>
+                            <p style="font-size:150%;font-family:'Brush Script MT',cursive">Brush Script MT</p>
+                            <p style="font-size:150%;font-family:'Lucida Handwriting',cursive">Lucida Handwriting</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Fantasy</td>
+                        <td>
+                            <p style="font-size:150%;font-family:Copperplate,fantasy">Copperplate</p>
+                            <p style="font-size:150%;font-family:Papyrus,fantasy">Papyrus</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-6">Google Fonts</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h4>Example:</h4><br>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&lt;link href=&apos;https://fonts.googleapis.com/css?family=Calligraffitti&apos;
+                    rel=&apos;stylesheet&apos;&gt;</p>
+                <p>&lt;style&gt;</p>
+                <p>body {</p>
+                <p>&nbsp; &nbsp; font-family: &apos;Calligraffitti&apos;;font-size: 22px;</p>
+                <p>}</p>
+                <p>&lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p>&lt;p&gt;&lt;strong&gt;The Crazy Programmer&lt;/strong&gt;&lt;p&gt;</p>
+                <p><br></p>
+                <p>&lt;p&gt;ABCDEFGHIJKLMNOPQRSTUVWXYZ&lt;/p&gt;</p>
+                <p>&lt;p&gt;abcdefghijklmnopqrstuvwxyz&lt;/p&gt;</p>
+                <p>&lt;p&gt;123456790&lt;/p&gt;</p>
+                <p><br></p>
+                <p>&lt;/body&gt;</p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button><br><br>
+            <h4>Some Google Font Examples:</h4>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>S.no</th>
+                        <th>Font Family</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td style="font-size:22px;font-family:ABeeZee">ABeeZee</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td style="font-size:22px;font-family:Abel">Abel</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td style="font-size:22px;font-family:Abhaya Libre">Abhaya Libre</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td style="font-size:22px;font-family:Abril Fatface">Abril Fatface</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td style="font-size:22px;font-family:Aclonica">Aclonica</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td style="font-size:22px;font-family:Acme">Acme</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td style="font-size:22px;font-family:Actor">Actor</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td style="font-size:22px;font-family:Aguafina Script">Aguafina Script</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td style="font-size:22px;font-family:Akronim">Akronim</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11</th>
+                        <td style="font-size:22px;font-family:Aladin">Aladin</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12</th>
+                        <td style="font-size:22px;font-family:Aldrich">Aldrich</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13</th>
+                        <td style="font-size:22px;font-family:Bad Script">Bad Script</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14</th>
+                        <td style="font-size:22px;font-family:Beth Ellen">Beth Ellen</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">15</th>
+                        <td style="font-size:22px;font-family:Calligraffitti">Calligraffitti</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h4 id="item-1-7">Text</h4>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3>Text Color</h3>
+            <p>The color property is used to set the color of the text. The color is specified by:</p>
+            <div class="container1">
+                <ul>
+                    <li>a color name - like "red"</li>
+                    <li>a HEX value - like "#ff0000"</li>
+                    <li>an RGB value - like "rgb(255,0,0)"</li>
+                </ul>
+            </div>
+            <h4>Example:</h4>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p><br></p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                    initial-scale=1&quot;&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .one {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: aqua;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .two {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: green;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: aqua;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .three {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: goldenrod;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: aqua;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p><br></p>
+                <p>&lt;body&gt;</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &lt;h2 class=&quot;one&quot;&gt;Text Color&lt;/h2&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h2 class=&quot;two&quot;&gt;Text Color&lt;/h2&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h2 class=&quot;three&quot;&gt;Text Color&lt;/h2&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p><br></p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button><br><br>
+
+            <h3>Text Alignment</h3><br>
+            <h4>Example:</h4>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; h2 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-align: left;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; h3 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-align: right;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; h4 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-align: center;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &lt;h2 class=&quot;one&quot;&gt;Text Color&lt;/h2&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h3 class=&quot;two&quot;&gt;Text Color&lt;/h3&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h4 class=&quot;three&quot;&gt;Text Color&lt;/h4&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p><br></p>
+                <p>&lt;/html&gt;</p>
+            </div>
+
+            <h3>Text Decoration</h3><br>
+            <h4>Example:</h4>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; h2 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-decoration: overline;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; h3 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-decoration: line-through;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; h4 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-decoration: underline;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &lt;h2 class=&quot;one&quot;&gt;Text Color&lt;/h2&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h3 class=&quot;two&quot;&gt;Text Color&lt;/h3&gt;</p>
+                <p>&nbsp; &nbsp; &lt;h4 class=&quot;three&quot;&gt;Text Color&lt;/h4&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p><br></p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button><br><br>
+
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-8">Round</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h4>Example:</h4>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #div1 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 200px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 200px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: goldenrod;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 30px 30px 30px 0px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-top: 10px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #div2 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 200px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 200px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: blue;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 30px 0px 30px 0px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-top: 10px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #div3 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 200px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 200px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: silver;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 0px 120px 0px 120px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-top: 10px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</p>
+                <p>&nbsp; &nbsp; &lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;</p>
+                <p>&nbsp; &nbsp; &lt;div id=&quot;div3&quot;&gt;&lt;/div&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p><br></p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button><br><br>
+
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-9">Padding & Margin</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <img src="https://codebridgeplus.com/wp-content/uploads/main-qimg-b179765cbff3d5c6ac2f6cc932293af5.png"
+                alt="Img"><br><br>
+            <h3>Padding & Margin Example:</h3><br>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #div1 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 500px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 500px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: goldenrod;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 50px 50px 50px 50px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; #div2 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 100px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 100px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: blue;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 50px 51px 52px 53px;</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /* You can also write like this */</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /* padding-top: 50px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding-right: 51px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding-bottom: 52px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding-left: 53px; */</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p>&nbsp; &nbsp; &lt;div id=&quot;div1&quot;&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;</p>
+                <p>&nbsp; &nbsp; &lt;/div&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p><br></p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button><br><br>
+
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-10">Buttons</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h4>Example:</h4><br>
+            <div style="color: whitesmoke;" class="container col">
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp; &nbsp; &lt;style&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: #4CAF50;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: none;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 16px 32px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-align: center;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-decoration: none;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: inline-block;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 16px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 4px 2px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition-duration: 0.4s;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cursor: pointer;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 5px;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button1 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 2px solid goldenrod;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button1:hover {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: goldenrod;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button2 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 2px solid #008CBA;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button2:hover {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: #008CBA;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button3 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 2px solid #f44336;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button3:hover {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: #f44336;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button4 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 2px solid #e7e7e7;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button4:hover {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: #e7e7e7;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button5 {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: black;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 2px solid #555555;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p><br></p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; .button5:hover {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: #555555;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p><br></p>
+                <p>&lt;body&gt;</p>
+                <p>&nbsp; &nbsp; &lt;button class=&quot;button button1&quot;&gt;Golden&lt;/button&gt;</p>
+                <p>&nbsp; &nbsp; &lt;button class=&quot;button button2&quot;&gt;Blue&lt;/button&gt;</p>
+                <p>&nbsp; &nbsp; &lt;button class=&quot;button button3&quot;&gt;Red&lt;/button&gt;</p>
+                <p>&nbsp; &nbsp; &lt;button class=&quot;button button4&quot;&gt;Gray&lt;/button&gt;</p>
+                <p>&nbsp; &nbsp; &lt;button class=&quot;button button5&quot;&gt;Black&lt;/button&gt;</p>
+                <p>&lt;/body&gt;</p>
+                <p><br></p>
+                <p>&lt;/html&gt;</p>
+            </div><br>
+            <button type="button" onclick="editer()" class="btn btn-success">Editer</button><br><br>
+
+            <!-- <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-11">Alert</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
                 ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
                 totam?</p>
 
-            <h5 id="item-1-5">Fonts</h5>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-12">Tables</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
                 ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
                 totam?</p>
 
-            <h5 id="item-1-6">Google Fonts</h5>
+
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-13">Lists</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
                 ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
                 totam?</p>
 
-            <h5 id="item-1-7">Text</h5>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-1-14">Images</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
                 ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
                 totam?</p>
 
-            <h5 id="item-1-8">Round</h5>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
+            <h3 id="item-2">Examples</h3>
+            <hr style="border-top: 1px solid rgb(40, 167, 69);">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
                 ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-1-9">Padding & Margin</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-1-10">Buttons</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-1-11">Alert</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-1-12">Tables</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-1-13">Lists</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-1-14">Images</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-2">Examples</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-2-1">CSS Demo</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
-
-            <h5 id="item-2-2">CSS Examples</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod soluta nostrum placeat laudantium,
-                ullam quas corporis? Atque officia, deserunt laborum, a eaque eveniet culpa autem soluta eos veniam
-                totam?</p>
+                totam?</p> -->
         </div>
     </div>
 
